@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+[Desktop Entry]
+Type=Application
+Name=NetPulse
+GenericName=Network Diagnostics
+Comment=Ping, traceroute, DNS, HTTP and TLS checks in one window
+Exec=netpulse
+Icon=io.github.agent_denis.NetPulse
+Terminal=false
+Categories=Network;Monitor;
+Keywords=ping;traceroute;mtr;dns;dig;nslookup;whois;http;tls;certificate;port;subnet;network;
+StartupNotify=true
+StartupWMClass=io.github.agent_denis.NetPulse
+SingleMainWindow=true

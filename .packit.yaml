@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+#
+# Packit: builds NetPulse in Fedora COPR. See README.md, "Building in COPR".
+specfile_path: packaging/netpulse.spec
+upstream_package_name: netpulse
+downstream_package_name: netpulse
+upstream_tag_template: v{version}
+
+files_to_sync:
+  - packaging/netpulse.spec
+  - .packit.yaml
+
+srpm_build_deps:
+  - python3-pip
+
+jobs:
+  # Test builds for every pull request (results show up as PR checks).
+  - job: copr_build
+    trigger: pull_request
+    targets:
+      - fedora-all
+
+  # Release builds into your own COPR project when a v* tag/GitHub release is made.
+  - job: copr_build
+    trigger: release
+    owner: agent-denis
+    project: netpulse
+    targets:
+      - fedora-all

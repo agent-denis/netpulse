@@ -1,0 +1,88 @@
+.\" SPDX-License-Identifier: GPL-3.0-or-later
+.\" Copyright (C) <YEAR> <AUTHOR>
+.TH NETPULSE 1 "November 2026" "netpulse 1.0.0" "User Commands"
+.SH NAME
+netpulse \- network diagnostics in a desktop window
+.SH SYNOPSIS
+.B netpulse
+[\fB\-\-browser\fR | \fB\-\-no\-open\fR]
+[\fB\-\-port\fR \fIPORT\fR]
+[\fB\-\-bind\fR \fIADDRESS\fR]
+[\fB\-\-debug\fR]
+.br
+.B netpulse
+\fB\-\-version\fR | \fB\-\-help\fR
+.SH DESCRIPTION
+.B netpulse
+is a local, single-user network diagnostics tool. It runs the real system tools
+(ping, traceroute, mtr, dig, nslookup, host, whois, curl, openssl, ip, ss, resolvectl)
+and shows their output live in a graphical interface, together with a parsed summary.
+.PP
+The interface is served by a small web server that listens on the loopback interface
+only. It opens in a native GTK window when GTK 4, WebKitGTK 6.0 and PyGObject are
+installed, and in the default web browser otherwise.
+.PP
+Starting
+.B netpulse
+again while it is running raises the existing window (or opens the existing session in
+the browser) instead of starting a second copy.
+.SH OPTIONS
+.TP
+.B \-\-browser
+Open the interface in the default web browser instead of a native window. In this mode
+NetPulse stops by itself about two minutes after the browser page is closed.
+.TP
+.B \-\-no\-open
+Do not open anything; print the address (including the access token) and keep running
+until interrupted.
+.TP
+.BI \-\-port " PORT"
+Listen on \fIPORT\fR instead of a random free port.
+.TP
+.BI \-\-bind " ADDRESS"
+Listen on another loopback address (default 127.0.0.1). Non-loopback addresses are refused.
+.TP
+.B \-\-debug
+Log HTTP requests to standard error (the access token is redacted).
+.TP
+.B \-\-version
+Print the version and exit.
+.TP
+.B \-h, \-\-help
+Print a short help text and exit.
+.SH SECURITY
+A random access token is created at every start and required for every API request.
+Requests with an unexpected Host or Origin header are refused, which blocks DNS
+rebinding and requests from other web pages. Tools are always started without a shell,
+with validated arguments. NetPulse never asks for root privileges.
+.SH FILES
+.TP
+.I $XDG_CONFIG_HOME/netpulse/settings.json
+Settings (theme, history size). Default: \fI~/.config/netpulse/\fR.
+.TP
+.I $XDG_DATA_HOME/netpulse/history.jsonl
+Run history. Default: \fI~/.local/share/netpulse/\fR.
+.TP
+.I $XDG_RUNTIME_DIR/netpulse/
+Lock file and address of the running instance.
+.SH PRIVACY
+NetPulse has no telemetry and no update checks. It only contacts the hosts you test.
+.SH EXIT STATUS
+0 on success, 1 if the server could not start or a running instance does not answer,
+2 for invalid command-line options.
+.SH SEE ALSO
+.BR ping (8),
+.BR traceroute (8),
+.BR tracepath (8),
+.BR mtr (8),
+.BR dig (1),
+.BR nslookup (1),
+.BR host (1),
+.BR whois (1),
+.BR curl (1),
+.BR openssl-s_client (1ssl),
+.BR ip (8),
+.BR ss (8),
+.BR resolvectl (1)
+.SH BUGS
+Report bugs at https://github.com/agent-denis/netpulse/issues

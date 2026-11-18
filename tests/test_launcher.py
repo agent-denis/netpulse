@@ -76,7 +76,18 @@ def _children(pid: int) -> list[int]:
     return [int(x) for x in out.split()]
 
 
-@pytest.mark.skipif(not os.path.exists("/usr/bin/ping"), reason="needs ping")
+def _ping_works() -> bool:
+    """ping exists *and* may send packets (not always true in containers)."""
+    try:
+        r = subprocess.run(
+            ["ping", "-c", "1", "-W", "1", "127.0.0.1"], capture_output=True, timeout=5
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return r.returncode == 0
+
+
+@pytest.mark.skipif(not _ping_works(), reason="needs a working ping")
 def test_sigterm_stops_server_and_kills_running_jobs(tmp_path):
     env = {
         **os.environ,

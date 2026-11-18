@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later
+     Copyright (C) <YEAR> <AUTHOR> -->
+<component type="desktop-application">
+  <id>io.github.agent_denis.NetPulse</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>NetPulse</name>
+  <summary>Diagnose network problems from one window</summary>
+  <developer id="io.github.agent_denis">
+    <name>NetPulse contributors</name>
+  </developer>
+
+  <description>
+    <p>
+      NetPulse puts the classic network tools into a calm, simple interface. It runs the real
+      programs on your computer and shows their output live, together with an easy-to-read
+      summary.
+    </p>
+    <ul>
+      <li>Ping with a live round-trip chart, traceroute and MTR hop tables</li>
+      <li>DNS lookups with dig, nslookup and host, reverse DNS and whois</li>
+      <li>Compare the answers of several DNS resolvers side by side</li>
+      <li>HTTP(S) checks with a timing breakdown, and TLS certificate details</li>
+      <li>TCP port checks, local network information and a subnet calculator</li>
+      <li>A quick diagnose report for a single host</li>
+    </ul>
+    <p>
+      Results can be copied or exported as text, JSON or Markdown, and every run is kept in a
+      searchable history. NetPulse works offline, has light and dark themes and sends nothing
+      anywhere except the network tests you start.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.agent_denis.NetPulse.desktop</launchable>
+  <provides>
+    <binary>netpulse</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/agent-denis/netpulse</url>
+  <url type="bugtracker">https://github.com/agent-denis/netpulse/issues</url>
+  <url type="vcs-browser">https://github.com/agent-denis/netpulse</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Ping with a live round-trip chart (light theme)</caption>
+      <image>https://raw.githubusercontent.com/agent-denis/netpulse/main/docs/screenshots/light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>TLS certificate details (dark theme)</caption>
+      <image>https://raw.githubusercontent.com/agent-denis/netpulse/main/docs/screenshots/dark.png</image>
+    </screenshot>
+  </screenshots>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#9cc6f0</color>
+    <color type="primary" scheme_preference="dark">#0d4f7a</color>
+  </branding>
+
+  <requires>
+    <display_length compare="ge">900</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </supports>
+
+  <categories>
+    <category>Network</category>
+    <category>Monitor</category>
+  </categories>
+  <keywords>
+    <keyword>ping</keyword>
+    <keyword>traceroute</keyword>
+    <keyword>DNS</keyword>
+    <keyword>whois</keyword>
+    <keyword>TLS</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-11-18">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

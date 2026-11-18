@@ -21,7 +21,7 @@ help:
 	@echo "make tarball       git archive of HEAD into build/rpmbuild/SOURCES"
 	@echo "make srpm / rpm    build source / noarch RPM under build/rpmbuild"
 	@echo "make mock          clean build of the SRPM in mock ($(MOCKCFG))"
-	@echo "make set-author AUTHOR='Name' YEAR=2026   fill in copyright placeholders"
+	@echo "make set-author AUTHOR='Name' YEAR=2026 EMAIL=you@example.org   fill in placeholders"
 
 run:
 	PYTHONPATH=src $(PYTHON) -m netpulse $(ARGS)
@@ -36,9 +36,13 @@ lint:
 	ruff check src tests
 	ruff format --check src tests
 	$(PYTHON) tests/check_headers.py
-	@if [ -f $(SPEC) ]; then rpmlint -r packaging/netpulse.rpmlintrc $(SPEC); fi
+	@# spec + built packages in one run (packaging/netpulse.rpmlintrc is loaded automatically)
 	@if ls $(TOPDIR)/SRPMS/*.src.rpm $(TOPDIR)/RPMS/noarch/*.rpm >/dev/null 2>&1; then \
-		rpmlint -r packaging/netpulse.rpmlintrc $(TOPDIR)/SRPMS/*.src.rpm $(TOPDIR)/RPMS/noarch/*.rpm; \
+		echo "rpmlint $(SPEC) + built packages"; \
+		rpmlint -r packaging/netpulse.rpmlintrc $(SPEC) $(TOPDIR)/SRPMS/*.src.rpm $(TOPDIR)/RPMS/noarch/*.rpm; \
+	else \
+		echo "rpmlint $(SPEC) (no packages built yet: run make rpm)"; \
+		rpmlint --ignore-unused-rpmlintrc $(SPEC); \
 	fi
 
 tarball:
@@ -58,9 +62,12 @@ mock: srpm
 	@ls -1 $(BUILD)/mock/*.rpm
 
 set-author:
-	@test -n "$(AUTHOR)" -a -n "$(YEAR)" || { echo "usage: make set-author AUTHOR='Name' YEAR=2026"; exit 1; }
-	git ls-files -z -- . ':!Makefile' ':!CLAUDE.md' | xargs -0 grep -lZ -e '<AUTHOR>' -e '<YEAR>' | \
-		xargs -0 -r sed -i -e 's/<AUTHOR>/$(AUTHOR)/g' -e 's/<YEAR>/$(YEAR)/g'
+	@test -n "$(AUTHOR)" -a -n "$(YEAR)" -a -n "$(EMAIL)" || \
+		{ echo "usage: make set-author AUTHOR='Name' YEAR=2026 EMAIL=you@example.org"; exit 1; }
+	git ls-files -z -- . ':!Makefile' ':!CLAUDE.md' | \
+		xargs -0 grep -lZ -e '<AUTHOR>' -e '<YEAR>' -e '<CONTACT_EMAIL>' | \
+		xargs -0 -r sed -i -e 's/<AUTHOR>/$(AUTHOR)/g' -e 's/<YEAR>/$(YEAR)/g' \
+			-e 's/<CONTACT_EMAIL>/$(EMAIL)/g'
 
 clean:
 	rm -rf $(BUILD) dist .pytest_cache .ruff_cache src/*.egg-info

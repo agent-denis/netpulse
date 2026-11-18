@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+#
+# rpmlint filters. Every entry explains why the warning is acceptable.
+
+# The description names the command-line tools NetPulse runs, plus two common
+# networking terms. They are spelled correctly; they are just not in rpmlint's
+# English dictionary. Only these exact words are filtered, so real typos still fail.
+addFilter(r"spelling-error \('(traceroute|tracepath|mtr|nslookup|whois|openssl|ip|ss|resolvectl|subnet|loopback)',")

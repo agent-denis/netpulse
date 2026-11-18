@@ -28,7 +28,7 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
 - Conventional Commits. Repo-local identity: `Denis <356570572+agent-denis@users.noreply.github.com>`.
   **Never push**: the user pushes to GitHub themselves.
 - Placeholders that stay as they are: `<AUTHOR>`, `<YEAR>`. GitHub user is `agent-denis`
-  (approved by the user), App ID `io.github.agent-denis.NetPulse`.
+  (approved by the user), App ID `io.github.agent_denis.NetPulse`.
 - Each tool is a module in `src/netpulse/tools/` that exposes `build_argv(params) -> list[str]` and
   `parse(output) -> dict` (see `tools/base.py`). Parsers are tested against real captured
   outputs in `tests/fixtures/`.
@@ -95,3 +95,15 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
 - Dev only: `NETPULSE_WINDOW_SNAPSHOT=/path.png` saves a PNG of the window shortly after load and
   quits; `NETPULSE_DEVTOOLS=1` enables the WebKit inspector. WebKit's sandbox needs the real
   `XDG_RUNTIME_DIR`, so don't fake it when testing the window.
+- App ID uses an underscore, `io.github.agent_denis.NetPulse`: AppStream forbids hyphens in
+  reverse-DNS IDs (`cid-rdns-contains-hyphen`). GitHub URLs keep `agent-denis`.
+- rpmlint: `packaging/netpulse.rpmlintrc` only filters spelling "errors" for tool names
+  (traceroute, whois, …) and the words subnet/loopback. `make lint` checks spec + built
+  packages in one run so the filter is used.
+- `%check` runs pytest against the installed package (`-o pythonpath=`); the end-to-end
+  SIGTERM test skips when ping can't send packets (mock chroot, some CI containers).
+- CODE_OF_CONDUCT.md is the unmodified Contributor Covenant 2.1 (downloaded from
+  contributor-covenant.org) with `<CONTACT_EMAIL>` as the contact.
+  `make set-author AUTHOR=… YEAR=… EMAIL=…` fills in all placeholders.
+- Version 1.0.0 lives in `src/netpulse/__init__.py`, the spec, metainfo, man page and
+  CHANGELOG; `tests/test_headers.py` checks they agree.
