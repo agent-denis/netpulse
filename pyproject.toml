@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netpulse"
+dynamic = ["version"]
+description = "Local network diagnostics GUI: ping, traceroute, DNS, HTTP, TLS and more"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "<AUTHOR>" }]
+requires-python = ">=3.12"
+dependencies = []
+classifiers = [
+    "Environment :: Web Environment",
+    "Environment :: X11 Applications :: GTK",
+    "Intended Audience :: System Administrators",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking :: Monitoring",
+]
+
+[project.urls]
+Homepage = "https://github.com/agent-denis/netpulse"
+Issues = "https://github.com/agent-denis/netpulse/issues"
+
+[project.scripts]
+netpulse = "netpulse.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "netpulse.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+netpulse = ["static/*", "static/**/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF", "ANN", "PTH"]
+ignore = [
+    "S603",   # subprocess without shell: argv is built from validated input, that's the design
+    "S607",   # partial executable path: tools are resolved with shutil.which
+    "S101",   # assert is fine in tests
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["ANN", "S", "PTH"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["network: needs real network access (skipped unless NETPULSE_NETWORK_TESTS=1)"]
+addopts = "-ra"
