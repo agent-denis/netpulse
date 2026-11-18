@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build SRPM and RPM and attach them to the release
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - name: Install dependencies
+        run: >
+          dnf -y install
+          git make python3 python3-devel python3-pytest python3-setuptools
+          pyproject-rpm-macros rpm-build rpmlint desktop-file-utils appstream coreutils
+
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Allow git in the container workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Check that the tag matches the version
+        run: |
+          version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' src/netpulse/__init__.py)
+          test "v${version}" = "${GITHUB_REF_NAME}" || {
+            echo "Tag ${GITHUB_REF_NAME} does not match version ${version}"; exit 1; }
+
+      - name: Build SRPM and RPM
+        run: make rpm
+
+      - name: Create the GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            build/rpmbuild/RPMS/noarch/*.rpm
+            build/rpmbuild/SRPMS/*.src.rpm
+          generate_release_notes: true

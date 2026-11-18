@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) <YEAR> <AUTHOR>
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint, test and build (Fedora)
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - name: Install dependencies
+        run: >
+          dnf -y install
+          git make python3 python3-devel python3-pytest python3-setuptools ruff
+          pyproject-rpm-macros rpm-build rpmlint desktop-file-utils appstream
+          iputils bind-utils traceroute mtr whois curl openssl iproute coreutils
+
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Allow git in the container workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Ruff
+        run: |
+          ruff check src tests
+          ruff format --check src tests
+
+      - name: Licence headers
+        run: python3 tests/check_headers.py
+
+      - name: Tests
+        run: python3 -m pytest -q
+
+      - name: Build the RPM
+        run: make rpm
+
+      - name: rpmlint
+        run: make lint
+
+      - name: Validate desktop file and AppStream metainfo
+        run: |
+          desktop-file-validate data/*.desktop
+          appstreamcli validate --no-net data/*.metainfo.xml
+
+      - name: Upload RPMs
+        uses: actions/upload-artifact@v4
+        with:
+          name: rpms
+          path: |
+            build/rpmbuild/RPMS/noarch/*.rpm
+            build/rpmbuild/SRPMS/*.src.rpm
