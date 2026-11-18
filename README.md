@@ -10,7 +10,7 @@ output live and turns it into an easy-to-read summary.
 
 - Runs locally, for one user. No account, no cloud, **no telemetry, no update checks**.
 - Works offline (apart from the network tests themselves). All assets ship in the package.
-- Light, Dark and System themes, WCAG 2.1 AA contrast, full keyboard use.
+- A soft, earthy light theme, a dark theme and System mode; WCAG 2.1 AA contrast, full keyboard use.
 - Opens in a native GTK window, or in your web browser if GTK/WebKit isn't installed.
 
 ## Features

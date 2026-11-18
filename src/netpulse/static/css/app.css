@@ -9,44 +9,45 @@
 /* ------------------------------------------------------------------ tokens */
 :root,
 :root[data-theme="light"] {
+  /* "Semi-light" earth palette: sand, clay, terracotta, sage, ochre. Muted, not bright. */
   color-scheme: light;
-  --bg: #f6f5f4;
-  --surface: #ffffff;
-  --surface-2: #f3f3f4;
-  --sidebar-bg: #ebebed;
-  --sidebar-hover: #e0e0e3;
-  --sidebar-active: #d6dbe3;
-  --sidebar-heading: #1a5fb4;
-  --border: #dcdcde;
-  --border-strong: #85858c;
-  --text: #1d1d20;
-  --text-muted: #55555c;
-  --accent: #1a5fb4;
-  --accent-hover: #164f96;
-  --accent-text: #ffffff;
-  --link: #1a5fb4;
-  --focus: #1a5fb4;
-  --ok: #1b6e37;
-  --ok-bg: #e3f3e8;
-  --warn: #7f4f00;
-  --warn-bg: #fdf0d8;
-  --err: #b0231b;
-  --err-bg: #fbe8e6;
-  --info: #1a5fb4;
-  --info-bg: #e5eefa;
-  --code-bg: #f7f7f8;
-  --code-text: #1d1d20;
-  --chart-line: #1a5fb4;
-  --chart-loss: #b0231b;
-  --chart-grid: #e2e2e5;
-  --chart-axis: #55555c;
-  --bar-1: #1a5fb4;
-  --bar-2: #8f4bb5;
-  --bar-3: #1b7a6e;
-  --bar-4: #a35b00;
-  --bar-5: #4a4a52;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --backdrop: rgba(0, 0, 0, 0.35);
+  --bg: #e9e1d3;
+  --surface: #f4eee3;
+  --surface-2: #e9e0cf;
+  --sidebar-bg: #ddd2bd;
+  --sidebar-hover: #d3c6ae;
+  --sidebar-active: #cfc2a8;
+  --sidebar-heading: #793c23;
+  --border: #d2c4ab;
+  --border-strong: #7c6e57;
+  --text: #2e2820;
+  --text-muted: #514839;
+  --accent: #8b4a2f;
+  --accent-hover: #733b24;
+  --accent-text: #fbf6ee;
+  --link: #84442a;
+  --focus: #84442a;
+  --ok: #3f5c22;
+  --ok-bg: #dde3c6;
+  --warn: #714800;
+  --warn-bg: #eedcb4;
+  --err: #962e1d;
+  --err-bg: #efd2c6;
+  --info: #2c5861;
+  --info-bg: #d2dfdc;
+  --code-bg: #ede5d6;
+  --code-text: #2e2820;
+  --chart-line: #2c5861;
+  --chart-loss: #962e1d;
+  --chart-grid: #d8cbb5;
+  --chart-axis: #514839;
+  --bar-1: #2c5861;
+  --bar-2: #8b4a2f;
+  --bar-3: #556b26;
+  --bar-4: #8a5f12;
+  --bar-5: #6b4a66;
+  --shadow: rgba(70, 50, 25, 0.1);
+  --backdrop: rgba(45, 32, 20, 0.4);
 }
 
 :root[data-theme="dark"] {
