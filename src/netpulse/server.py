@@ -263,6 +263,13 @@ class Handler(BaseHTTPRequestHandler):
         if ctype is None:
             raise HTTPError(HTTPStatus.NOT_FOUND, "not found")
         body = target.read_bytes()
+        if target.name == "index.html":
+            # Bake the saved theme into <html> so the first paint is already right.
+            theme = self.app.settings.get().get("theme", "system")
+            if theme in ("system", "light", "dark"):
+                body = body.replace(
+                    b'data-theme-pref="system"', f'data-theme-pref="{theme}"'.encode(), 1
+                )
         self._send_headers(200, ctype, len(body))
         if not head:
             self.wfile.write(body)

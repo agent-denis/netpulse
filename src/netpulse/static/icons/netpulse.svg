@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later
+     Copyright (C) <YEAR> <AUTHOR> -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>NetPulse</title>
+  <defs>
+    <linearGradient id="np-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a7fd4"/>
+      <stop offset="1" stop-color="#11806f"/>
+    </linearGradient>
+    <linearGradient id="np-side" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d5f9e"/>
+      <stop offset="1" stop-color="#0a5247"/>
+    </linearGradient>
+  </defs>
+  <!-- tile with a darker base edge, Adwaita-style -->
+  <rect x="12" y="16" width="104" height="100" rx="22" fill="url(#np-side)"/>
+  <rect x="12" y="12" width="104" height="98" rx="22" fill="url(#np-bg)"/>
+  <!-- faint grid, like a chart -->
+  <g stroke="#ffffff" stroke-opacity="0.16" stroke-width="2">
+    <path d="M26 42h76M26 61h76M26 80h76"/>
+  </g>
+  <!-- the pulse -->
+  <path d="M24 66h18l7-14 10 32 11-44 9 26h25" fill="none" stroke="#ffffff" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- endpoint node -->
+  <circle cx="104" cy="66" r="7.5" fill="#ffffff"/>
+  <circle cx="104" cy="66" r="3.5" fill="#11806f"/>
+</svg>
