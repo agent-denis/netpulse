@@ -1,0 +1,9 @@
+PING fedoraproject.org (38.145.32.21) 1400(1428) bytes of data.
+From 192.168.0.1 icmp_seq=1 Frag needed and DF set (mtu = 1380)
+no answer yet for icmp_seq=1
+1408 bytes from 38.145.32.21: icmp_seq=2 ttl=45 time=110 ms
+1408 bytes from 38.145.32.21: icmp_seq=3 ttl=45 time=113 ms
+
+--- fedoraproject.org ping statistics ---
+3 packets transmitted, 2 received, +1 errors, 33.3333% packet loss, time 1002ms
+rtt min/avg/max/mdev = 110.386/111.813/113.241/1.427 ms

@@ -1,0 +1,10 @@
+ 1?: [LOCALHOST]                      pmtu 1500
+ 1:  192.168.202.1                                         1.267ms 
+ 1:  192.168.202.1                                         1.173ms 
+ 2:  192.168.0.1                                           4.098ms 
+ 3:  192.168.0.1                                           4.300ms pmtu 1380
+ 3:  no reply
+ 4:  no reply
+ 5:  no reply
+     Too many hops: pmtu 1380
+     Resume: pmtu 1380 

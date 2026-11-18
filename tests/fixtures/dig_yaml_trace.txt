@@ -1,0 +1,128 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:01.941Z
+    response_time: !!timestamp 2026-11-18T07:35:01.966Z
+    message_size: 542b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "127.0.0.53"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 21277
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 14
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      ANSWER_SECTION:
+        - '. 421126 IN NS e.root-servers.net.'
+        - '. 421126 IN NS m.root-servers.net.'
+        - '. 421126 IN NS k.root-servers.net.'
+        - '. 421126 IN NS c.root-servers.net.'
+        - '. 421126 IN NS j.root-servers.net.'
+        - '. 421126 IN NS i.root-servers.net.'
+        - '. 421126 IN NS f.root-servers.net.'
+        - '. 421126 IN NS b.root-servers.net.'
+        - '. 421126 IN NS d.root-servers.net.'
+        - '. 421126 IN NS h.root-servers.net.'
+        - '. 421126 IN NS a.root-servers.net.'
+        - '. 421126 IN NS g.root-servers.net.'
+        - '. 421126 IN NS l.root-servers.net.'
+        - '. 421126 IN RRSIG NS 8 0 518400 20261129220000 20261116210000 8763 . HiQ5suMb3uQ4vsqYOsD0LTOn3opB2Ev8kp3ONbO1fJVzg7wio6nnn+DC wX6uSGbz/SlQ79H5Z86mlVjHku8hXvH6BRijXtfQqukRpV3Rd95a+Tfo /9qraIhK8hCXJyY0bKlRQ8G2evea9P5BN0JU4crUZaPYSVfAhu8ErkKT YGH+UbHLh0sIvdsIfeskfSEdNvF9rModZRY+QUvvWS927W0bixzErqf+ 16CjiRT0B9lS3wTIL2Oqlx7q+jrd7ZvWCg3s0Gndo1kMlELhlp2EvlYi fpTNWbGSQqiY2Exa3E2OOyJE1D9yi+mHjfyJ3HBRZPuh5kCc9mJvF07B M6kPtQ=='
+- type: MESSAGE
+  message:
+    type: AUTH_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:01.971Z
+    response_time: !!timestamp 2026-11-18T07:35:01.998Z
+    message_size: 766b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "192.5.5.241"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 20682
+      flags: qr
+      QUESTION: 1
+      ANSWER: 0
+      AUTHORITY: 8
+      ADDITIONAL: 13
+      AUTHORITY_SECTION:
+        - 'org. 172800 IN NS v0n0.pir-ns.org.'
+        - 'org. 172800 IN NS v0n1.pir-ns.org.'
+        - 'org. 172800 IN NS v0n2.pir-ns.org.'
+        - 'org. 172800 IN NS v0n3.pir-ns.org.'
+        - 'org. 172800 IN NS v2n0.pir-ns.org.'
+        - 'org. 172800 IN NS v2n1.pir-ns.org.'
+        - 'org. 86400 IN DS 725 8 2 EB3881030D9D34BB7BC40DDC5A198E7C830804C03FB6AA982592946D EB27BEBE'
+        - 'org. 86400 IN RRSIG DS 8 1 86400 20261201050000 20261118040000 8763 . BFERJ1DwPLYzaxdFin14VVFw9wzwswDTlm6nSPaRKIwdJkehJMR26fwo B7jha421iGwwr1M7Ilx0sVADEterPXqvOHXn5+kuWtU248YZpfdNukPg jYbCb0dUgt9VqgdkrOx2/aOcg9ZXg1+83k5Rrrh+JKvb2ApysGk9ibwN yKFW4BIioaqi7aggvTxGZsG2i0+D/taylc8OjQvYPOl1tVh2qyN9adIh r9LOvKrh5EQvKxXAbZt//IL8/iCNM7hU4NtPxOVxVjuGuWBB1SHYg13T rPIKBixKCHeFbekQGftMJeWIGke2KgbE+0TI8SRaGBi71bis2lkJ2vG+ GJspJA=='
+- type: DIG_ERROR
+  message: |
+    no servers could be reached
+- type: MESSAGE
+  message:
+    type: AUTH_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:02.174Z
+    response_time: !!timestamp 2026-11-18T07:35:02.200Z
+    message_size: 509b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "199.249.120.1"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 33735
+      flags: qr
+      QUESTION: 1
+      ANSWER: 0
+      AUTHORITY: 6
+      ADDITIONAL: 9
+      AUTHORITY_SECTION:
+        - 'fedoraproject.org. 3600 IN NS ns01.fedoraproject.org.'
+        - 'fedoraproject.org. 3600 IN NS ns02.fedoraproject.org.'
+        - 'fedoraproject.org. 3600 IN NS ns03.fedoraproject.org.'
+        - 'fedoraproject.org. 3600 IN NS ns05.fedoraproject.org.'
+        - 'fedoraproject.org. 3600 IN DS 58125 14 2 FCC70DB7608C9837F060D6D92DF9E53A22D1F830752B9E7038FC48EA 411DFF46'
+        - 'fedoraproject.org. 3600 IN RRSIG DS 8 2 3600 20261203002355 20261111225355 11859 org. KbYYjtglFi3nO3ac6787Jyiy3pJUeQUIGDDFBJdSUxRFe7QqQDIXTSHB DxCCVDLERqoKAfTqogCtWrOk/LqyIKNqmruQ8N8LyOjyN76PKzCR17WP ysRVMPODEMg/+oVQh70XKxgRV7jtKB05zu2ZuXTFNUFPAbzDdAn13OEK rNE='
+- type: MESSAGE
+  message:
+    type: AUTH_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:02.358Z
+    response_time: !!timestamp 2026-11-18T07:35:02.482Z
+    message_size: 347b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "152.2.23.107"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 63348
+      flags: qr aa
+      QUESTION: 1
+      ANSWER: 9
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      ANSWER_SECTION:
+        - 'fedoraproject.org. 60 IN A 185.141.165.254'
+        - 'fedoraproject.org. 60 IN A 152.2.23.103'
+        - 'fedoraproject.org. 60 IN A 18.157.159.91'
+        - 'fedoraproject.org. 60 IN A 3.70.22.218'
+        - 'fedoraproject.org. 60 IN A 38.145.32.20'
+        - 'fedoraproject.org. 60 IN A 85.236.55.6'
+        - 'fedoraproject.org. 60 IN A 38.145.32.21'
+        - 'fedoraproject.org. 60 IN A 35.178.204.134'
+        - 'fedoraproject.org. 60 IN RRSIG A 14 2 60 20261217181043 20261117181043 60624 fedoraproject.org. e2Uh0IhQr3Si0Yg8wcmpzp3IYK2vD7C923ZB+wFQeUQ40Qtbw+F+AZs1 2JT7X7IXcVF/oe2UKjlkgzsPqe2hNEJxk8tOdSn43N3MNZ8AReiEkQWW ZG8Ffq83OnGcaB8N'

@@ -1,0 +1,30 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:00.300Z
+    response_time: !!timestamp 2026-11-18T07:35:00.321Z
+    message_size: 66b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "8.8.8.8"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 15172
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 1
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 512
+      QUESTION_SECTION:
+        - 'google.com. IN CAA'
+      ANSWER_SECTION:
+        - 'google.com. 577 IN CAA 0 issue "pki.goog"'

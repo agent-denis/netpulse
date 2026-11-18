@@ -1,0 +1,2 @@
+traceroute to 127.0.0.1 (127.0.0.1), 5 hops max, 60 byte packets
+ 1  127.0.0.1  0.027 ms  0.009 ms

@@ -18,7 +18,7 @@ export function stats(items) {
       .map((i) =>
         h(
           "div",
-          { class: ["stat", i.level] },
+          { class: ["stat", i.level, i.small || (typeof i.value === "string" && i.value.length > 9) ? "small" : null] },
           h("div", { class: "stat-label" }, i.label),
           h(
             "div",

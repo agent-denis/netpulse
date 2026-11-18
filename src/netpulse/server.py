@@ -167,6 +167,8 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _error(self, status: HTTPStatus, message: str, field: str | None = None) -> None:
+        # The request body may be unread (e.g. 413/415): never reuse this connection.
+        self.close_connection = True
         payload: dict[str, Any] = {"error": message}
         if field:
             payload["field"] = field

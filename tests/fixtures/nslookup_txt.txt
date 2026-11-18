@@ -1,0 +1,13 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+fedoraproject.org	text = "MS=ms22432804"
+fedoraproject.org	text = "vg97pvbjnrzxb6m01r4xq18hclzhd8wb"
+fedoraproject.org	text = "5ydtb1xp643t48ppxycmmjskqnwh8m3c"
+fedoraproject.org	text = "google-site-verification=zS_dIege-8S1nc9rcJm9FoDuNtuz4n9sAgvfUavuY5Q"
+fedoraproject.org	text = "v=spf1 a a:mailers.fedoraproject.org  ip4:38.145.32.11 ip4:38.145.32.12 ?all"
+fedoraproject.org	text = "_lt296rkx9b2d787uncfo9pfc5tbla2s"
+
+Authoritative answers can be found from:
+

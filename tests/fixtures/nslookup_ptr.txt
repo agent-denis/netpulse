@@ -1,0 +1,8 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+1.1.1.1.in-addr.arpa	name = one.one.one.one.
+
+Authoritative answers can be found from:
+

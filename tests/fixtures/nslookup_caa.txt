@@ -1,0 +1,8 @@
+Server:		8.8.8.8
+Address:	8.8.8.8#53
+
+Non-authoritative answer:
+google.com	rdata_257 = 0 issue "pki.goog"
+
+Authoritative answers can be found from:
+

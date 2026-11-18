@@ -1,0 +1,21 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	fedoraproject.org
+Address: 85.236.55.6
+Name:	fedoraproject.org
+Address: 3.70.22.218
+Name:	fedoraproject.org
+Address: 185.141.165.254
+Name:	fedoraproject.org
+Address: 38.145.32.21
+Name:	fedoraproject.org
+Address: 38.145.32.20
+Name:	fedoraproject.org
+Address: 152.2.23.103
+Name:	fedoraproject.org
+Address: 18.157.159.91
+Name:	fedoraproject.org
+Address: 35.178.204.134
+

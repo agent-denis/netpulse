@@ -1,0 +1,33 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:00.235Z
+    response_time: !!timestamp 2026-11-18T07:35:00.289Z
+    message_size: 122b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "1.1.1.1"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 15664
+      flags: qr rd ra ad
+      QUESTION: 1
+      ANSWER: 4
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 1232
+      QUESTION_SECTION:
+        - 'fedoraproject.org. IN NS'
+      ANSWER_SECTION:
+        - 'fedoraproject.org. 300 IN NS ns01.fedoraproject.org.'
+        - 'fedoraproject.org. 300 IN NS ns02.fedoraproject.org.'
+        - 'fedoraproject.org. 300 IN NS ns03.fedoraproject.org.'
+        - 'fedoraproject.org. 300 IN NS ns05.fedoraproject.org.'

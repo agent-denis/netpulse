@@ -1,0 +1,4 @@
+ 1?: [LOCALHOST]                        0.010ms pmtu 65536
+ 1:  localhost                                             0.046ms reached
+ 1:  localhost                                             0.025ms reached
+     Resume: pmtu 65536 hops 1 back 1 

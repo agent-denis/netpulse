@@ -1,0 +1,2 @@
+traceroute to fedoraproject.org (2a05:d01c:c6a:cc02:eee3:30f3:2341:57a6), 5 hops max, 80 byte packets
+connect: Network is unreachable

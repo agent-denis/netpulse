@@ -35,11 +35,13 @@ export function rttChart(points, { label = "Round-trip time per packet", unit = 
   const svg = s("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": label, preserveAspectRatio: "xMidYMid meet" });
   const grid = s("g", { class: "grid" });
   const axis = s("g", { class: "axis" });
+  const step = max / 4;
+  const digits = step >= 10 ? 0 : step >= 1 ? 1 : Math.min(4, Math.ceil(-Math.log10(step)) + 1);
   for (let i = 0; i <= 4; i++) {
-    const v = (max / 4) * i;
+    const v = step * i;
     const yy = y(v);
     grid.appendChild(s("line", { x1: pad.l, x2: W - pad.r, y1: yy, y2: yy }));
-    axis.appendChild(s("text", { x: pad.l - 6, y: yy + 4, "text-anchor": "end" }, `${+v.toFixed(v < 10 ? 1 : 0)}`));
+    axis.appendChild(s("text", { x: pad.l - 6, y: yy + 4, "text-anchor": "end" }, `${+v.toFixed(digits)}`));
   }
   axis.appendChild(s("text", { x: 4, y: pad.t + 10 }, unit));
   const ticks = Math.min(points.length, 10);

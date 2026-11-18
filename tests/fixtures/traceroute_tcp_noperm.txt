@@ -1,0 +1,2 @@
+You do not have enough privileges to use this traceroute method.
+socket: Operation not permitted

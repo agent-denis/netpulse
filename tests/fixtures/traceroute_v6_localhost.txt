@@ -1,0 +1,2 @@
+traceroute to ::1 (::1), 5 hops max, 80 byte packets
+ 1  ::1  0.025 ms  0.010 ms

@@ -1,0 +1,2 @@
+20 us-smtp-inbound-2.mimecast.com.
+10 us-smtp-inbound-1.mimecast.com.

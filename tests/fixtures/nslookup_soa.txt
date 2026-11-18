@@ -1,0 +1,15 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+fedoraproject.org
+	origin = ns01.fedoraproject.org
+	mail addr = hostmaster.fedoraproject.org
+	serial = 2794942600
+	refresh = 3600
+	retry = 600
+	expire = 2419200
+	minimum = 86400
+
+Authoritative answers can be found from:
+

@@ -9,7 +9,7 @@ import importlib
 from netpulse.tools.base import Tool
 
 # Order = order in the sidebar (within each group).
-MODULES: tuple[str, ...] = ()
+MODULES: tuple[str, ...] = ("ping", "traceroute", "dig", "nslookup")
 
 REGISTRY: dict[str, Tool] = {}
 

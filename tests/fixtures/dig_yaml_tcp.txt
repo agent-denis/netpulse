@@ -1,0 +1,40 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:01.698Z
+    response_time: !!timestamp 2026-11-18T07:35:01.716Z
+    message_size: 222b
+    socket_family: INET
+    socket_protocol: TCP
+    response_address: "9.9.9.9"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 62074
+      flags: qr rd ra ad
+      QUESTION: 1
+      ANSWER: 11
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 512
+      QUESTION_SECTION:
+        - 'fedoraproject.org. IN A'
+      ANSWER_SECTION:
+        - 'fedoraproject.org. 35 IN A 152.2.23.103'
+        - 'fedoraproject.org. 35 IN A 38.145.32.47'
+        - 'fedoraproject.org. 35 IN A 38.145.32.20'
+        - 'fedoraproject.org. 35 IN A 140.211.169.196'
+        - 'fedoraproject.org. 35 IN A 38.145.32.48'
+        - 'fedoraproject.org. 35 IN A 35.90.167.38'
+        - 'fedoraproject.org. 35 IN A 67.219.144.68'
+        - 'fedoraproject.org. 35 IN A 54.205.131.252'
+        - 'fedoraproject.org. 35 IN A 152.2.23.104'
+        - 'fedoraproject.org. 35 IN A 38.145.32.21'
+        - 'fedoraproject.org. 35 IN A 44.205.255.164'

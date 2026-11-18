@@ -1,0 +1,2 @@
+nonexistent.invalid: Name or service not known
+Cannot handle "host" cmdline arg `nonexistent.invalid' on position 1 (argc 3)

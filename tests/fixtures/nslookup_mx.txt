@@ -1,0 +1,9 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+fedoraproject.org	mail exchanger = 10 us-smtp-inbound-1.mimecast.com.
+fedoraproject.org	mail exchanger = 20 us-smtp-inbound-2.mimecast.com.
+
+Authoritative answers can be found from:
+

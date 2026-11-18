@@ -59,3 +59,18 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
 - `dig ANY` is kept, with a note about RFC 8482 minimal answers.
 - traceroute defaults to UDP mode (no root). ICMP/TCP modes are offered with a note that
   they need privileges. sudo/pkexec are never called.
+- `dig` is run with `+yaml` and parsed by `miniyaml.py`, a small reader for the YAML subset BIND
+  emits (the stdlib has no YAML parser, and PyYAML is not allowed at runtime). `+short` output is
+  plain text. Classic text output has a fallback parser. `-r` ignores `~/.digrc`; `-t`/`-q` mark
+  type and name explicitly (dig has no `--`).
+- `tracepath` fully buffers stdout when writing to a pipe, so it runs as `stdbuf -oL tracepath …`
+  (coreutils). ping and traceroute already flush per line.
+- Children get a minimal environment (`PATH`, `LC_ALL=C`, `HOME`…) so their output is parseable
+  and nothing leaks from the user's environment.
+- Test fixtures in `tests/fixtures/` are real captured outputs (Fedora 45, Nov 2026). This
+  machine has no IPv6 internet, so the IPv6 internet fixtures are "Network is unreachable" errors;
+  IPv6 success cases use `::1`.
+
+## Dev tips
+- The UI can be driven headlessly with Chromium's DevTools protocol (`chromium-browser
+  --headless=new --remote-debugging-port=…`). Use throwaway `XDG_*` dirs so the real history stays clean.

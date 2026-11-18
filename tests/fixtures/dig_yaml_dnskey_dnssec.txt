@@ -1,0 +1,33 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:00.409Z
+    response_time: !!timestamp 2026-11-18T07:35:00.442Z
+    message_size: 560b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "9.9.9.9"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 18609
+      flags: qr rd ra ad
+      QUESTION: 1
+      ANSWER: 4
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags: do
+          udp: 512
+      QUESTION_SECTION:
+        - 'fedoraproject.org. IN DNSKEY'
+      ANSWER_SECTION:
+        - 'fedoraproject.org. 176 IN DNSKEY 256 3 14 04ZsDOgyzs3kJsJ4jEY3MYufkCOWm1OI8N4M+dlBOBmweln0TSaKfafH zNCkaPiVG4bdgdnrzwxmjpK5GQgsiB47np+I8850Ea3EJG5ORDl3f//l rr92HiYh5DxCNhkG'
+        - 'fedoraproject.org. 176 IN DNSKEY 257 3 14 7ttmhus8JD56ybsvMVZVsXa3U2R+2+WmOPIP7BU6t2LicosMZ2Ju3pfv ijsa5LvBvVCB4xVtLSqEdLSvW4vJPLSAB2uyJwHPJMezh0SzGmVCImLU 6qDxsxjHqtZ76/Sf'
+        - 'fedoraproject.org. 176 IN RRSIG DNSKEY 14 2 300 20261217181042 20261117181042 58125 fedoraproject.org. v2GW+w7yIcI8qjBMdE4FNmSMAKboJNEU1fbZOAT9PDyGDrVnAP8UfR2b /UGlDJDgvuWn67nag/H6fsKii6L6kDTvZPv+SXdF+PmAw/M9uz6BkL2G kojvQO6G8aIaM8YQ'
+        - 'fedoraproject.org. 176 IN RRSIG DNSKEY 14 2 300 20261217181042 20261117181042 60624 fedoraproject.org. mOrGMFJKQGAJK8GmemQJmWODqpzf2kX5yIH2OoYoD0S0cEpSyk7BqBk/ oyVvmY8SR5ZybrULDlfODFhMivoKLTRnyvIqM3QgUKsNi/GXmIIFNEmr E9Ceo0YmuVZmb9Te'

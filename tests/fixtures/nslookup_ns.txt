@@ -1,0 +1,11 @@
+Server:		8.8.8.8
+Address:	8.8.8.8#53
+
+Non-authoritative answer:
+fedoraproject.org	nameserver = ns03.fedoraproject.org.
+fedoraproject.org	nameserver = ns02.fedoraproject.org.
+fedoraproject.org	nameserver = ns05.fedoraproject.org.
+fedoraproject.org	nameserver = ns01.fedoraproject.org.
+
+Authoritative answers can be found from:
+

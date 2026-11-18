@@ -1,0 +1,27 @@
+
+; <<>> DiG 9.18.51-dev <<>> -r +timeout=3 +tries=2 -t A -q fedoraproject.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52834
+;; flags: qr rd ra; QUERY: 1, ANSWER: 8, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;fedoraproject.org.		IN	A
+
+;; ANSWER SECTION:
+fedoraproject.org.	57	IN	A	35.178.204.134
+fedoraproject.org.	57	IN	A	18.157.159.91
+fedoraproject.org.	57	IN	A	85.236.55.6
+fedoraproject.org.	57	IN	A	152.2.23.103
+fedoraproject.org.	57	IN	A	185.141.165.254
+fedoraproject.org.	57	IN	A	3.70.22.218
+fedoraproject.org.	57	IN	A	38.145.32.20
+fedoraproject.org.	57	IN	A	38.145.32.21
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Wed Nov 18 07:35:02 GMT 2026
+;; MSG SIZE  rcvd: 174
+

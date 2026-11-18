@@ -501,6 +501,12 @@ main:focus {
   padding: 0;
 }
 
+.field .segmented {
+  align-self: flex-start;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
 .field fieldset {
   border: 0;
   padding: 0;
@@ -850,7 +856,7 @@ details.menu .menu-items button {
 /* ------------------------------------------------------------------ summary widgets */
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 10px;
   margin-bottom: 14px;
 }
@@ -873,6 +879,12 @@ details.menu .menu-items button {
   font-size: 20px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.stat.small .stat-value {
+  font-size: 15px;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
@@ -1294,4 +1306,9 @@ dialog::backdrop {
   button {
     border: 1px solid CanvasText;
   }
+}
+
+/* multi-value cells (e.g. several routers answering one hop) */
+table.data td {
+  white-space: pre-line;
 }

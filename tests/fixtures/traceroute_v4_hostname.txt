@@ -1,0 +1,21 @@
+traceroute to fedoraproject.org (38.145.32.21), 20 hops max, 60 byte packets
+ 1  _gateway (192.168.202.1)  2.034 ms  1.925 ms  1.910 ms
+ 2  router.lan (192.168.0.1)  12.196 ms  12.302 ms  10.622 ms
+ 3  * * *
+ 4  10.64.0.5 (10.64.0.5)  36.258 ms  27.626 ms  27.611 ms
+ 5  * * *
+ 6  * * *
+ 7  10.64.0.6 (10.64.0.6)  27.201 ms 10.64.0.2 (10.64.0.2)  29.706 ms  26.637 ms
+ 8  * * *
+ 9  10.64.0.7 (10.64.0.7)  25.074 ms 10.64.0.8 (10.64.0.8)  32.726 ms  28.639 ms
+10  * * core1.transit.example.net (198.51.100.1)  26.948 ms
+11  * * *
+12  core2.transit.example.net (198.51.100.2)  28.765 ms core3.transit.example.net (198.51.100.3)  94.682 ms core4.transit.example.net (198.51.100.4)  28.733 ms
+13  core5.transit.example.net (198.51.100.5)  101.033 ms core6.transit.example.net (198.51.100.6)  101.017 ms core7.transit.example.net (198.51.100.7)  90.695 ms
+14  core8.transit.example.net (198.51.100.8)  100.567 ms core9.transit.example.net (198.51.100.9)  85.532 ms core8.transit.example.net (198.51.100.8)  106.847 ms
+15  core10.transit.example.net (198.51.100.10)  104.115 ms  113.270 ms  113.254 ms
+16  core11.transit.example.net (198.51.100.11)  116.155 ms core10.transit.example.net (198.51.100.10)  127.863 ms core12.transit.example.net (198.51.100.12)  110.167 ms
+17  core10.transit.example.net (198.51.100.10)  122.060 ms 198.51.100.13 (198.51.100.13)  103.726 ms  128.021 ms
+18  198.51.100.13 (198.51.100.13)  127.287 ms core11.transit.example.net (198.51.100.11)  127.746 ms 198.51.100.14 (198.51.100.14)  135.318 ms
+19  * 198.51.100.13 (198.51.100.13)  110.621 ms *
+20  198.51.100.14 (198.51.100.14)  110.587 ms * *

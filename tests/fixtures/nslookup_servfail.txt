@@ -1,0 +1,6 @@
+;; Got SERVFAIL reply from 1.1.1.1
+Server:		1.1.1.1
+Address:	1.1.1.1#53
+
+** server can't find dnssec-failed.org: SERVFAIL
+

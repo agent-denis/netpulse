@@ -1,0 +1,30 @@
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-11-18T07:35:01.773Z
+    response_time: !!timestamp 2026-11-18T07:35:01.802Z
+    message_size: 130b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "127.0.0.53"
+    response_port: 53
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 51846
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 1
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 65494
+      QUESTION_SECTION:
+        - '1.1.1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.4.0.0.7.4.6.0.6.2.ip6.arpa. IN PTR'
+      ANSWER_SECTION:
+        - '1.1.1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7.4.0.0.7.4.6.0.6.2.ip6.arpa. 1800 IN PTR one.one.one.one.'

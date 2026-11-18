@@ -1,0 +1,8 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+_xmpp-server._tcp.jabber.org	service = 30 30 5269 scarlet.jabber.org.
+
+Authoritative answers can be found from:
+
