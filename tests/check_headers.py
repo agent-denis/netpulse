@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Check that every source file starts with the SPDX + copyright header.
 
 Run directly (``python3 tests/check_headers.py``) or through pytest.

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Ask several resolvers the same question in parallel and compare the answers."""
 
 from __future__ import annotations

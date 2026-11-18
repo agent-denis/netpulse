@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """TCP port check for one host and a few ports (a checker, not a scanner)."""
 
 from __future__ import annotations

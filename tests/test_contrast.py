@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """WCAG 2.1 AA contrast for every foreground/background pair the UI uses."""
 
 import re

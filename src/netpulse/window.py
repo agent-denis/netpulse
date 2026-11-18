@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Native window: GTK 4 + WebKitGTK 6.0 via PyGObject (optional).
 
 The window shows the same local web UI as the browser mode. It follows the

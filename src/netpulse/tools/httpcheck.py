@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """HTTP(S) check with curl: status, redirect chain, headers and a timing breakdown."""
 
 from __future__ import annotations

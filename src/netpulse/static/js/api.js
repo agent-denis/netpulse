@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  *
  * Talking to the local backend. The access token arrives in the URL
  * fragment (#token=…), which browsers never send to the server and which we

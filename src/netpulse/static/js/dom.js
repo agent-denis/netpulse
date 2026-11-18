@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  *
  * Tiny DOM helper. Text always goes in via text nodes / textContent, so tool
  * output can never become markup. (There is deliberately no innerHTML in

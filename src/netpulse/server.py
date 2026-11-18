@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Local HTTP server: static UI, JSON API and Server-Sent Events.
 
 Every request is checked for an allowed ``Host`` header (DNS rebinding) and,

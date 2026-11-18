@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  *
  * A result card: live status, elapsed time, Summary / Raw output tabs,
  * Cancel, Run again, Copy, Export, Close.

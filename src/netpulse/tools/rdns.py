@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Reverse DNS (PTR) lookup with ``dig -x``."""
 
 from __future__ import annotations

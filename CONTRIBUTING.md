@@ -26,7 +26,7 @@ make lint                   # ruff + licence headers + rpmlint
 - Every source file starts with an SPDX header in its comment syntax:
   ```
   SPDX-License-Identifier: GPL-3.0-or-later
-  Copyright (C) <YEAR> <AUTHOR>
+  Copyright (C) <year> <your name>
   ```
 - **Never use a shell.** Commands are built as argument lists from validated input
   (`src/netpulse/validators.py`). Values starting with `-` must be rejected.

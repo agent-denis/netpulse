@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Quick diagnose: ping, DNS A/AAAA, traceroute and an HTTP check for one host, together."""
 
 from __future__ import annotations

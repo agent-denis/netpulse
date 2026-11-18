@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 
 [build-system]
 requires = ["setuptools>=69"]
@@ -12,7 +12,7 @@ description = "Local network diagnostics GUI: ping, traceroute, DNS, HTTP, TLS a
 readme = "README.md"
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
-authors = [{ name = "<AUTHOR>" }]
+authors = [{ name = "Denis", email = "denis.solihull@pm.me" }]
 requires-python = ">=3.12"
 dependencies = []
 classifiers = [

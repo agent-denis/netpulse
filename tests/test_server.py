@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """HTTP server: token, Host and Origin checks, static files, jobs over SSE."""
 
 import http.client

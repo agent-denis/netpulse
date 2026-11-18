@@ -27,7 +27,7 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
   `Copyright (C) <YEAR> <AUTHOR>` (`tests/check_headers.py` enforces it).
 - Conventional Commits. Repo-local identity: `Denis <356570572+agent-denis@users.noreply.github.com>`.
   **Never push**: the user pushes to GitHub themselves.
-- Placeholders that stay as they are: `<AUTHOR>`, `<YEAR>`. GitHub user is `agent-denis`
+- Author: Denis <denis.solihull@pm.me>, copyright year 2026 (placeholders filled 2026-11-18). GitHub user is `agent-denis`
   (approved by the user), App ID `io.github.agent_denis.NetPulse`.
 - Each tool is a module in `src/netpulse/tools/` that exposes `build_argv(params) -> list[str]` and
   `parse(output) -> dict` (see `tools/base.py`). Parsers are tested against real captured

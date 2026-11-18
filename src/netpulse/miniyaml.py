@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """A tiny reader for the YAML subset that ``dig +yaml`` (BIND 9) produces.
 
 Supported: block mappings and sequences (by indentation), plain / single- /

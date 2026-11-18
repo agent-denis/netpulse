@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Job runner: streaming, cancel, timeout, output cap, process-group cleanup.
 
 These tests use ``sh -c`` *as a test fixture* to spawn grandchildren; the

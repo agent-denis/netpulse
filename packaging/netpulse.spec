@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 
 %global app_id io.github.agent_denis.NetPulse
 
@@ -98,5 +98,5 @@ appstreamcli validate --no-net %{buildroot}%{_metainfodir}/%{app_id}.metainfo.xm
 
 
 %changelog
-* Wed Nov 18 2026 NetPulse contributors <noreply@github.com> - 1.0.0-1
+* Wed Nov 18 2026 Denis <denis.solihull@pm.me> - 1.0.0-1
 - First release

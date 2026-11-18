@@ -13,7 +13,7 @@ Only the latest release receives security fixes.
 
 Report them privately through GitHub:
 [Security → Report a vulnerability](https://github.com/agent-denis/netpulse/security/advisories/new).
-If that is not possible, e-mail <CONTACT_EMAIL>.
+If that is not possible, e-mail denis.solihull@pm.me.
 
 Please include:
 

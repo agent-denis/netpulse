@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  */
 import { recordTable, rcodeLevel, resolverFields } from "../dnsview.js";
 import { h } from "../dom.js";

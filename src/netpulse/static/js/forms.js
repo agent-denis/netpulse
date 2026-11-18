@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  *
  * Builds accessible forms from field definitions:
  *   {name, label, type, default, help, placeholder, min, max, step,

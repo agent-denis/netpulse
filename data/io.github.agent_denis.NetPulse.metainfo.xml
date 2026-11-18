@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SPDX-License-Identifier: GPL-3.0-or-later
-     Copyright (C) <YEAR> <AUTHOR> -->
+     Copyright (C) 2026 Denis -->
 <component type="desktop-application">
   <id>io.github.agent_denis.NetPulse</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -9,7 +9,7 @@
   <name>NetPulse</name>
   <summary>Diagnose network problems from one window</summary>
   <developer id="io.github.agent_denis">
-    <name>NetPulse contributors</name>
+    <name>Denis</name>
   </developer>
 
   <description>

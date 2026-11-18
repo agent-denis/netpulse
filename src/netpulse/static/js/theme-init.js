@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later
- * Copyright (C) <YEAR> <AUTHOR>
+ * Copyright (C) 2026 Denis
  *
  * Runs synchronously in <head>, before the stylesheet, so the first paint is
  * already in the right theme. The server writes the saved preference into

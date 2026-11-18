@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) <YEAR> <AUTHOR>
+# Copyright (C) 2026 Denis
 """Job management: run tools in the background and record their events.
 
 Every external command runs with ``shell=False`` in its own session/process
