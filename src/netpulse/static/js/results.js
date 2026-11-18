@@ -141,7 +141,13 @@ export class ResultCard {
     if (!this.running) {
       this.elapsedEl.textContent = formatDuration(this.job.elapsed || 0);
       const code = this.job.exit_code;
-      this.exitEl.textContent = code === null || code === undefined ? "" : `exit status ${code}`;
+      const SIGNALS = { 9: "SIGKILL", 15: "SIGTERM" };
+      this.exitEl.textContent =
+        code === null || code === undefined
+          ? ""
+          : code < 0
+            ? `stopped by signal ${-code}${SIGNALS[-code] ? ` (${SIGNALS[-code]})` : ""}`
+            : `exit status ${code}`;
     }
     if (this.opts.onStatus) this.opts.onStatus(this);
   }
@@ -158,7 +164,11 @@ export class ResultCard {
       nodes.push(notice(this.job.status === "cancelled" ? "info" : "err", h("p", {}, this.job.message)));
     }
     const summary = this.job.summary || {};
-    if (Object.keys(summary).length) {
+    // A cancelled/timed-out run whose parser found nothing has no useful summary to show.
+    const interrupted = this.job.status === "cancelled" || this.job.status === "timeout";
+    if (interrupted && summary.status === "error") {
+      nodes.push(h("p", { class: "muted" }, "No results before the run was stopped. The raw output may still help."));
+    } else if (Object.keys(summary).length) {
       try {
         nodes.push(this.def.render ? this.def.render(summary, this.job) : generic(summary));
       } catch (e) {
@@ -221,7 +231,9 @@ export class ResultCard {
     }
     this.renderCommands();
     this.renderSummary();
-    const verdict = this.def.verdict ? this.def.verdict(this.job.summary || {}) : "";
+    // After a cancel or timeout the parsed verdict is usually meaningless ("no report").
+    const finished = ev.status === "done" || ev.status === "failed";
+    const verdict = finished && this.def.verdict ? this.def.verdict(this.job.summary || {}) : "";
     this.opts.announce(`${this.job.title}: ${(STATUS[ev.status] || STATUS.error).label.toLowerCase()}${verdict ? `. ${verdict}` : ""}`);
   }
 
