@@ -1,0 +1,8 @@
+subject=CN=*.badssl.com
+issuer=CN=YR1,O=Let's Encrypt,C=US
+serial=065C62C1D5361BD7E6951263A67064063934
+notBefore=Sep 29 20:02:56 2026 GMT
+notAfter=Dec 28 20:02:55 2026 GMT
+sha256 Fingerprint=1E:00:71:A2:31:C4:70:CE:38:BF:55:66:DF:F4:2F:78:C0:3C:5A:5A:F5:9F:FC:16:2B:78:0A:0C:48:D3:CF:1B
+X509v3 Subject Alternative Name: 
+    DNS:*.badssl.com, DNS:badssl.com

@@ -1,0 +1,1 @@
+fedoraproject.org has SOA record ns01.fedoraproject.org. hostmaster.fedoraproject.org. 2794942600 3600 600 2419200 86400

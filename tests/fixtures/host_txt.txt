@@ -1,0 +1,6 @@
+fedoraproject.org descriptive text "vg97pvbjnrzxb6m01r4xq18hclzhd8wb"
+fedoraproject.org descriptive text "v=spf1 a a:mailers.fedoraproject.org  ip4:38.145.32.11 ip4:38.145.32.12 ?all"
+fedoraproject.org descriptive text "MS=ms22432804"
+fedoraproject.org descriptive text "_lt296rkx9b2d787uncfo9pfc5tbla2s"
+fedoraproject.org descriptive text "5ydtb1xp643t48ppxycmmjskqnwh8m3c"
+fedoraproject.org descriptive text "google-site-verification=zS_dIege-8S1nc9rcJm9FoDuNtuz4n9sAgvfUavuY5Q"

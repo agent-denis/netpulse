@@ -1,0 +1,1 @@
+www.fedoraproject.org is an alias for wildcard.fedoraproject.org.

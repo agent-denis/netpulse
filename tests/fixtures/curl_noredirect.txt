@@ -1,0 +1,30 @@
+HTTP/1.1 302 Found
+Date: Wed, 18 Nov 2026 07:55:01 GMT
+Server: Apache
+Location: https://fedoraproject.org/
+Content-Length: 317
+Content-Type: text/html; charset=iso-8859-1
+
+
+--- NetPulse timing ---
+http_code=302
+http_version=1.1
+num_redirects=0
+remote_ip=35.178.204.134
+remote_port=80
+scheme=http
+ssl_verify_result=0
+url_effective=http://fedoraproject.org/
+time_namelookup=0.001238
+time_connect=0.020769
+time_appconnect=0.000000
+time_pretransfer=0.020796
+time_starttransfer=0.055479
+time_redirect=0.000000
+time_total=0.055535
+size_download=317
+size_header=179
+speed_download=5708
+content_type=text/html; charset=iso-8859-1
+exitcode=0
+errormsg=

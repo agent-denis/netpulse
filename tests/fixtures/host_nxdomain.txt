@@ -1,0 +1,1 @@
+Host nonexistent.invalid not found: 3(NXDOMAIN)

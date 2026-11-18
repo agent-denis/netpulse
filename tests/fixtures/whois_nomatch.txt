@@ -1,0 +1,10 @@
+No match for domain "NONEXISTENT-DOMAIN-NETPULSE-TEST-XYZ.COM".
+>>> Last update of whois database: 2026-11-18T07:47:40Z <<<
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+

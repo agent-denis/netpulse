@@ -1,0 +1,2 @@
+fedoraproject.org mail is handled by 20 us-smtp-inbound-2.mimecast.com.
+fedoraproject.org mail is handled by 10 us-smtp-inbound-1.mimecast.com.

@@ -1,0 +1,1 @@
+[{"dst":"fe80::/64","dev":"vnet0","protocol":"kernel","metric":256,"flags":[],"pref":"medium"},{"dst":"fe80::/64","dev":"eno1","protocol":"kernel","metric":1024,"flags":[],"pref":"medium"}]

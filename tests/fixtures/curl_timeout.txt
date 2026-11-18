@@ -1,0 +1,24 @@
+
+--- NetPulse timing ---
+http_code=000
+http_version=0
+num_redirects=0
+remote_ip=192.0.2.1
+remote_port=80
+scheme=http
+ssl_verify_result=0
+url_effective=http://192.0.2.1/
+time_namelookup=0.000020
+time_connect=0.016892
+time_appconnect=0.000000
+time_pretransfer=0.016925
+time_starttransfer=0.000000
+time_redirect=0.000000
+time_total=3.002248
+size_download=0
+size_header=0
+speed_download=0
+content_type=
+exitcode=28
+errormsg=Operation timed out after 3002 milliseconds with 0 bytes received
+curl: (28) Operation timed out after 3002 milliseconds with 0 bytes received

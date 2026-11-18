@@ -1,0 +1,29 @@
+
+--- NetPulse timing ---
+http_code=000
+http_version=0
+num_redirects=0
+remote_ip=
+remote_port=-1
+scheme=https
+ssl_verify_result=10
+url_effective=https://expired.badssl.com/
+time_namelookup=0.027751
+time_connect=0.047527
+time_appconnect=0.000000
+time_pretransfer=13.300777
+time_starttransfer=13.300777
+time_redirect=0.000000
+time_total=13.300780
+size_download=0
+size_header=0
+speed_download=0
+content_type=
+exitcode=60
+errormsg=SSL certificate OpenSSL verify result: certificate has expired (10)
+curl: (60) SSL certificate OpenSSL verify result: certificate has expired (10)
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the webpage mentioned above.

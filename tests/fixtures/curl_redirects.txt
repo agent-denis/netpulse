@@ -1,0 +1,48 @@
+HTTP/1.1 302 Found
+Date: Wed, 18 Nov 2026 07:54:43 GMT
+Server: Apache
+Location: https://fedoraproject.org/
+Content-Length: 317
+Content-Type: text/html; charset=iso-8859-1
+
+HTTP/2 200 
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+referrer-policy: same-origin
+last-modified: Mon, 16 Nov 2026 01:26:22 GMT
+etag: "6e0ff-6605aaa5feb80"
+accept-ranges: bytes
+content-length: 450815
+vary: Accept-Encoding,User-Agent
+apptime: D=158
+x-fedora-proxyserver: proxy32.fedoraproject.org
+x-fedora-requestid: av1Zw0onABX30M2GksjXTQAABgY
+content-type: text/html
+date: Wed, 18 Nov 2026 07:54:43 GMT
+server: Apache
+
+
+--- NetPulse timing ---
+http_code=200
+http_version=2
+num_redirects=1
+remote_ip=18.157.159.91
+remote_port=443
+scheme=https
+ssl_verify_result=0
+url_effective=https://fedoraproject.org/
+time_namelookup=0.025917
+time_connect=0.068774
+time_appconnect=0.073396
+time_pretransfer=0.118313
+time_starttransfer=0.206174
+time_redirect=0.081567
+time_total=0.299130
+size_download=450815
+size_header=739
+speed_download=1507102
+content_type=text/html
+exitcode=0
+errormsg=

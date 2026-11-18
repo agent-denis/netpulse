@@ -1,0 +1,25 @@
+{
+    "report": {
+        "mtr": {
+            "src": "workstation",
+            "dst": "127.0.0.1",
+            "tos": 0,
+            "tests": 2,
+            "psize": "64",
+            "bitpattern": "0x00"
+        },
+        "hubs": [
+            {
+                "count": 1,
+                "host": "localhost",
+                "Loss%": 0.0,
+                "Snt": 2,
+                "Last": 0.079,
+                "Avg": 0.067,
+                "Best": 0.055,
+                "Wrst": 0.079,
+                "StDev": 0.016
+            }
+        ]
+    }
+}

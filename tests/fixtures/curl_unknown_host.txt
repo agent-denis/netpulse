@@ -1,0 +1,24 @@
+
+--- NetPulse timing ---
+http_code=000
+http_version=0
+num_redirects=0
+remote_ip=
+remote_port=-1
+scheme=https
+ssl_verify_result=0
+url_effective=https://nonexistent.invalid/
+time_namelookup=0.000000
+time_connect=0.000000
+time_appconnect=0.000000
+time_pretransfer=0.001031
+time_starttransfer=0.001031
+time_redirect=0.000000
+time_total=0.001032
+size_download=0
+size_header=0
+speed_download=0
+content_type=
+exitcode=6
+errormsg=Could not resolve host: nonexistent.invalid
+curl: (6) Could not resolve host: nonexistent.invalid

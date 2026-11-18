@@ -1,0 +1,1 @@
+[{"dst":"default","gateway":"192.168.202.1","dev":"eno1","protocol":"static","metric":100,"flags":[]},{"dst":"192.168.122.0/24","dev":"virbr0","protocol":"kernel","scope":"link","prefsrc":"192.168.122.1","flags":[]},{"dst":"192.168.202.0/24","dev":"eno1","protocol":"kernel","scope":"link","prefsrc":"192.168.202.2","metric":100,"flags":[]}]

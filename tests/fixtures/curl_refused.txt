@@ -1,0 +1,24 @@
+
+--- NetPulse timing ---
+http_code=000
+http_version=0
+num_redirects=0
+remote_ip=
+remote_port=-1
+scheme=http
+ssl_verify_result=0
+url_effective=http://127.0.0.1:9/
+time_namelookup=0.000020
+time_connect=0.000000
+time_appconnect=0.000000
+time_pretransfer=0.000118
+time_starttransfer=0.000119
+time_redirect=0.000000
+time_total=0.000121
+size_download=0
+size_header=0
+speed_download=0
+content_type=
+exitcode=7
+errormsg=Failed to connect to 127.0.0.1:9 after 0 ms: Could not connect to server
+curl: (7) Failed to connect to 127.0.0.1:9 after 0 ms: Could not connect to server

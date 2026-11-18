@@ -1,0 +1,8 @@
+subject=CN=cloudflare-dns.com,O=Cloudflare\, Inc.,L=San Francisco,ST=California,C=US
+issuer=CN=SSL.com SSL Intermediate CA ECC R2,O=SSL Corp,L=Houston,ST=Texas,C=US
+serial=4ED03304C46B87A8C2EB5569DB9EBA0C
+notBefore=Dec 31 19:20:01 2025 GMT
+notAfter=Dec 21 19:20:01 2026 GMT
+sha256 Fingerprint=C5:2A:B8:DD:E7:EE:8D:B3:E0:62:32:54:48:9C:EA:01:62:01:94:33:F6:E3:6E:A2:84:EA:EF:B1:A1:0F:26:06
+X509v3 Subject Alternative Name: 
+    DNS:cloudflare-dns.com, DNS:*.cloudflare-dns.com, IP Address:1.0.0.1, IP Address:1.1.1.1, IP Address:162.159.36.1, IP Address:162.159.46.1, IP Address:2606:4700:4700:0:0:0:0:1001, IP Address:2606:4700:4700:0:0:0:0:1111, IP Address:2606:4700:4700:0:0:0:0:64, IP Address:2606:4700:4700:0:0:0:0:6400, DNS:one.one.one.one

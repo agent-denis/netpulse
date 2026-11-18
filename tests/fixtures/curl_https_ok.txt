@@ -1,0 +1,41 @@
+HTTP/2 200 
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+referrer-policy: same-origin
+last-modified: Mon, 16 Nov 2026 01:26:22 GMT
+etag: "6e0ff-6605aaa5feb80"
+accept-ranges: bytes
+content-length: 450815
+vary: Accept-Encoding,User-Agent
+apptime: D=164
+x-fedora-proxyserver: proxy36.fedoraproject.org
+x-fedora-requestid: av1Zwwif2cjJT7oKJKJxtgADBgE
+content-type: text/html
+date: Wed, 18 Nov 2026 07:54:43 GMT
+server: Apache
+
+
+--- NetPulse timing ---
+http_code=200
+http_version=2
+num_redirects=0
+remote_ip=3.70.22.218
+remote_port=443
+scheme=https
+ssl_verify_result=0
+url_effective=https://fedoraproject.org/
+time_namelookup=0.001225
+time_connect=0.024403
+time_appconnect=0.075051
+time_pretransfer=0.075102
+time_starttransfer=0.127484
+time_redirect=0.000000
+time_total=0.231276
+size_download=450815
+size_header=560
+speed_download=1949267
+content_type=text/html
+exitcode=0
+errormsg=

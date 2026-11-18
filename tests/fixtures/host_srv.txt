@@ -1,0 +1,1 @@
+_xmpp-server._tcp.jabber.org has SRV record 30 30 5269 scarlet.jabber.org.

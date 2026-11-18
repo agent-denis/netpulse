@@ -59,7 +59,11 @@ class ProcessResult:
 def child_env() -> dict[str, str]:
     """A small, predictable environment: C locale for parseable output."""
     env = {"PATH": SAFE_PATH, "LC_ALL": "C", "LANG": "C"}
-    for key in ("HOME", "USER", "LOGNAME", "TZ"):
+    # Proxy settings are passed on so the HTTP check works behind a proxy.
+    # (HTTP_PROXY in upper case is deliberately left out: curl ignores it, see httpoxy.)
+    passthrough = ("HOME", "USER", "LOGNAME", "TZ", "http_proxy", "https_proxy", "HTTPS_PROXY",
+                   "all_proxy", "ALL_PROXY", "no_proxy", "NO_PROXY")  # fmt: skip
+    for key in passthrough:
         if key in os.environ:
             env[key] = os.environ[key]
     return env
@@ -178,24 +182,24 @@ class JobContext:
             raise JobCancelledError
 
     def output(self, text: str) -> None:
+        """Append raw output (thread-safe: several commands may run in parallel)."""
         job = self.job
-        if job.truncated:
-            return
         size = len(text.encode("utf-8", "replace"))
-        if job.output_bytes + size > self.manager.max_output_bytes:
-            job.truncated = True
-            notice = (
-                f"\n[NetPulse: output limit of {self.manager.max_output_bytes} bytes reached]\n"
-            )
-            with job._cond:
-                job._output.append(notice)
-            job.push("output", text=notice)
-            self.manager.cancel(job.id, reason="output limit reached")
-            return
-        job.output_bytes += size
-        with job._cond:
+        over = False
+        with job._cond:  # an RLock: push() may re-acquire it
+            if job.truncated:
+                return
+            if job.output_bytes + size > self.manager.max_output_bytes:
+                job.truncated = over = True
+                text = (
+                    f"\n[NetPulse: output limit of {self.manager.max_output_bytes} bytes reached]\n"
+                )
+            else:
+                job.output_bytes += size
             job._output.append(text)
-        job.push("output", text=text)
+            job.push("output", text=text)
+        if over:
+            self.manager.cancel(job.id, reason="output limit reached")
 
     def summary(self, data: dict[str, Any]) -> None:
         """Publish a (partial) parsed summary."""
@@ -214,6 +218,7 @@ class JobContext:
         on_line: Callable[[str], None] | None = None,
         echo: bool = True,
         label: str | None = None,
+        input_text: str | None = None,
     ) -> ProcessResult:
         """Run one external command, streaming its output. Never uses a shell."""
         if not argv or not isinstance(argv, list) or not all(isinstance(a, str) for a in argv):
@@ -222,14 +227,16 @@ class JobContext:
         exe = shutil.which(argv[0], path=SAFE_PATH)
         if exe is None:
             raise ToolMissingError(argv[0])
-        self.job.argv_display.append(argv)
+        # Multi-line arguments (curl's --write-out template) are shortened for display.
+        shown = [a if "\n" not in a else "<…>" for a in argv]
+        self.job.argv_display.append(shown)
         if echo:
             self.output(
-                f"$ {' '.join(argv)}\n" if label is None else f"$ [{label}] {' '.join(argv)}\n"
+                f"$ {' '.join(shown)}\n" if label is None else f"$ [{label}] {' '.join(shown)}\n"
             )
         proc = subprocess.Popen(
             [exe, *argv[1:]],
-            stdin=subprocess.DEVNULL,
+            stdin=subprocess.PIPE if input_text is not None else subprocess.DEVNULL,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             shell=False,
@@ -249,6 +256,13 @@ class JobContext:
 
         with self.job._cond:
             self.job._procs.add(proc)
+        if input_text is not None and proc.stdin is not None:
+            # Small inputs only (a PEM certificate): fits in the pipe buffer, no deadlock.
+            try:
+                proc.stdin.write(input_text)
+                proc.stdin.close()
+            except OSError:
+                pass
         if self.job.cancelled:  # cancelled while we were starting it
             kill_process_group(proc)
         timer = threading.Timer(timeout, on_timeout)

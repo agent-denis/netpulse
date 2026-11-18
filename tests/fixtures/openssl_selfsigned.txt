@@ -1,0 +1,87 @@
+Connecting to 104.154.89.105
+depth=0 C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+verify error:num=18:self-signed certificate
+verify return:1
+depth=0 C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+verify return:1
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+   i:C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+   a:PKEY: RSA, 2048 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Nov 17 21:01:38 2026 GMT; NotAfter: Nov 16 21:01:38 2028 GMT
+-----BEGIN CERTIFICATE-----
+MIIDeTCCAmGgAwIBAgIJAPsn/LG2H9JSMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1TYW4gRnJhbmNp
+c2NvMQ8wDQYDVQQKDAZCYWRTU0wxFTATBgNVBAMMDCouYmFkc3NsLmNvbTAeFw0y
+NjExMTcyMTAxMzhaFw0yODExMTYyMTAxMzhaMGIxCzAJBgNVBAYTAlVTMRMwEQYD
+VQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQ8wDQYDVQQK
+DAZCYWRTU0wxFTATBgNVBAMMDCouYmFkc3NsLmNvbTCCASIwDQYJKoZIhvcNAQEB
+BQADggEPADCCAQoCggEBAMIE7PiM7gTCs9hQ1XBYzJMY61yoaEmwIrX5lZ6xKyx2
+PmzAS2BMTOqytMAPgLaw+XLJhgL5XEFdEyt/ccRLvOmULlA3pmccYYz2QULFRtMW
+hyefdOsKnRFSJiFzbIRMeVXk0WvoBj1IFVKtsyjbqv9u/2CVSndrOfEk0TG23U3A
+xPxTuW1CrbV8/q71FdIzSOciccfCFHpsKOo3St/qbLVytH5aohbcabFXRNsKEqve
+ww9HdFxBIuGa+RuT5q0iBikusbpJHAwnnqP7i/dAcgCskgjZjFeEU4EFy+b+a1SY
+QCeFxxC7c3DvaRhBB0VVfPlkPz0sw6l865MaTIbRyoUCAwEAAaMyMDAwCQYDVR0T
+BAIwADAjBgNVHREEHDAaggwqLmJhZHNzbC5jb22CCmJhZHNzbC5jb20wDQYJKoZI
+hvcNAQELBQADggEBAEExrA8fRiIOujtGXi2ozwpUA1PbHGvPC9xM32/JUJsHMXmk
+AYcl7XBRA15s3Hw6GUdUdADPqrWZaGvF7DWTt4cZZy1gAPZhvmE1Wg3S2AZnmdrZ
+Qg2qicvdxX97Q7jWlRgvIW5KHhdJ7r01XYrJUPf3p7iGvb1zY50vDZYMSe2hjNlf
+eIKNOKPpHeSugUdCRqd6LwNKxLpqDWonV8ambUb43o7BnciOmt9YqVoOaK1xlX3O
+aPxFcU1J1+cHWcbZ0BfAkMo2WAcsPR2kfSSgEEI6aWt0C5Brdy9oYlTkLDkMXQul
+jZaBmXNLmNKBT1POKUsq9X9wyjDGMGFRPuvh70A=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+issuer=C=US, ST=California, L=San Francisco, O=BadSSL, CN=*.badssl.com
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Peer signature type: rsa_pkcs1_sha512
+Peer Temp Key: ECDH, prime256v1, 256 bits
+---
+SSL handshake has read 1599 bytes and written 1692 bytes
+Verification error: self-signed certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES128-GCM-SHA256
+Protocol: TLSv1.2
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES128-GCM-SHA256
+    Session-ID: E6383C6F0AE3241E29F12591FE64991113D39F6A61A6637863CCB0B9775194A0
+    Session-ID-ctx: 
+    Master-Key: A900372032F4EC6089B3FA19D18539BF20872FD1F59CBED9C8ABB7B498F7AB8B326F0CF7C958D5271ED86031BE6CD23D
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 08 4b a4 5b 47 2e 7e 14-48 d4 b6 0d 40 09 dc f3   .K.[G.~.H...@...
+    0010 - ac a0 0d bc 47 92 8c 0f-da 89 e6 cf 6c 2a 6f 9b   ....G.......l*o.
+    0020 - 55 4a d2 07 9f 56 cd a8-c3 df 97 e5 b4 8c 41 15   UJ...V........A.
+    0030 - 9f ed d3 d4 45 e0 1d 3b-ad 74 6b bc d5 d5 82 71   ....E..;.tk....q
+    0040 - f2 8a f1 ef 11 63 a6 78-b3 87 af 0b 26 20 17 6f   .....c.x....& .o
+    0050 - 6a 9e 10 9d 71 9a b1 59-8d d4 0f fe ec 6b db b8   j...q..Y.....k..
+    0060 - 3f e6 8b 67 b8 4c e9 e4-ff 54 cb 09 dc 35 de 33   ?..g.L...T...5.3
+    0070 - 91 47 73 d7 e7 b2 2b 5a-c1 33 c1 01 22 11 0b d2   .Gs...+Z.3.."...
+    0080 - 5e 19 51 90 fa 02 cf 89-b1 d9 e8 ad 51 43 3a 18   ^.Q.........QC:.
+    0090 - 31 74 89 7b 8a 5a 2d 2c-2c c8 cb ac d4 6a 40 fa   1t.{.Z-,,....j@.
+    00a0 - dc 87 05 fe f2 07 65 c9-98 da e8 51 a4 95 ad 6b   ......e....Q...k
+    00b0 - 08 19 39 21 6d 0f 62 6a-3d f7 72 9d 57 a9 4e 7c   ..9!m.bj=.r.W.N|
+    00c0 - 81 c8 27 b6 66 03 55 fd-38 0e 87 5c 86 44 23 2f   ..'.f.U.8..\.D#/
+
+    Start Time: 1794988183
+    Timeout   : 7200 (sec)
+    Verify return code: 18 (self-signed certificate)
+    Extended master secret: no
+---
+ECH: NOT CONFIGURED: -103
+---
+DONE

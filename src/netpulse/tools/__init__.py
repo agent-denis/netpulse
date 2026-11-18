@@ -9,7 +9,13 @@ import importlib
 from netpulse.tools.base import Tool
 
 # Order = order in the sidebar (within each group).
-MODULES: tuple[str, ...] = ("ping", "traceroute", "dig", "nslookup")
+MODULES: tuple[str, ...] = (
+    "ping", "traceroute", "mtr", "portcheck",
+    "dig", "nslookup", "host", "rdns", "dnscompare", "whois",
+    "httpcheck", "tlscert",
+    "localinfo",
+    "cidr", "diagnose",
+)  # fmt: skip
 
 REGISTRY: dict[str, Tool] = {}
 

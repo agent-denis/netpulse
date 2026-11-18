@@ -1,0 +1,8 @@
+subject=CN=*.badssl.com,OU=PositiveSSL Wildcard,OU=Domain Control Validated
+issuer=CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+serial=4AE79549FA9ABE3F100F17A478E16909
+notBefore=Apr  9 00:00:00 2015 GMT
+notAfter=Apr 12 23:59:59 2015 GMT
+sha256 Fingerprint=E2:B0:84:54:EC:A9:07:DF:B2:16:EF:B4:0A:E7:35:4E:D8:56:6E:1A:5E:15:79:A3:C2:5A:C1:D6:5C:CE:A8:6A
+X509v3 Subject Alternative Name: 
+    DNS:*.badssl.com, DNS:badssl.com

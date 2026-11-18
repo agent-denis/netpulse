@@ -1,0 +1,41 @@
+HTTP/2 404 
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+referrer-policy: same-origin
+last-modified: Mon, 16 Nov 2026 01:30:56 GMT
+etag: "67f45-6605abab4d400"
+accept-ranges: bytes
+content-length: 425797
+vary: Accept-Encoding,User-Agent
+apptime: D=246
+x-fedora-proxyserver: proxy04.fedoraproject.org
+x-fedora-requestid: av1Z1Wp7uGcmUKcuWAzk3QAcAAw
+content-type: text/html
+date: Wed, 18 Nov 2026 07:55:01 GMT
+server: Apache
+
+
+--- NetPulse timing ---
+http_code=404
+http_version=2
+num_redirects=0
+remote_ip=152.2.23.103
+remote_port=443
+scheme=https
+ssl_verify_result=0
+url_effective=https://fedoraproject.org/this-page-does-not-exist
+time_namelookup=0.034526
+time_connect=0.051786
+time_appconnect=0.518582
+time_pretransfer=0.518633
+time_starttransfer=0.737631
+time_redirect=0.000000
+time_total=1.191284
+size_download=425797
+size_header=560
+speed_download=357427
+content_type=text/html
+exitcode=0
+errormsg=

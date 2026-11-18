@@ -1,0 +1,36 @@
+{
+    "report": {
+        "mtr": {
+            "src": "workstation",
+            "dst": "1.1.1.1",
+            "tos": 0,
+            "tests": 3,
+            "psize": "64",
+            "bitpattern": "0x00"
+        },
+        "hubs": [
+            {
+                "count": 1,
+                "host": "192.168.202.1",
+                "Loss%": 0.0,
+                "Snt": 3,
+                "Last": 0.43,
+                "Avg": 0.708,
+                "Best": 0.43,
+                "Wrst": 1.202,
+                "StDev": 0.428
+            },
+            {
+                "count": 2,
+                "host": "???",
+                "Loss%": 100.0,
+                "Snt": 3,
+                "Last": 0.0,
+                "Avg": 0.0,
+                "Best": 0.0,
+                "Wrst": 0.0,
+                "StDev": 0.0
+            }
+        ]
+    }
+}

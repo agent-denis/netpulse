@@ -74,3 +74,13 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
 ## Dev tips
 - The UI can be driven headlessly with Chromium's DevTools protocol (`chromium-browser
   --headless=new --remote-debugging-port=…`). Use throwaway `XDG_*` dirs so the real history stays clean.
+- curl's per-phase timers are summed over every request of a redirect chain, so the HTTP
+  check shows a full DNS/connect/TLS/wait/transfer breakdown only without redirects; with
+  redirects it shows "Redirects" vs "Final request". Timing comes from a labelled
+  `--write-out` block (not `%{json}`, which dumps whole certificates).
+- mtr and traceroute default to UDP probes: some routers (e.g. mobile hotspots) drop ICMP
+  time-exceeded replies. mtr's helper `mtr-packet` has `cap_net_raw`, so all modes work unprivileged.
+- Port check: some networks run transparent proxies that accept every TCP connection
+  (seen on the dev machine: 192.0.2.1:443 "open"). The UI warns about this.
+- Fixtures with local network data are anonymised (MACs → 52:54:00:00:00:0x,
+  link-local → fe80::N).

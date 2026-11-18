@@ -1,0 +1,9 @@
+Using domain server:
+Name: 1.1.1.1
+Address: 1.1.1.1#53
+Aliases: 
+
+fedoraproject.org name server ns01.fedoraproject.org.
+fedoraproject.org name server ns02.fedoraproject.org.
+fedoraproject.org name server ns03.fedoraproject.org.
+fedoraproject.org name server ns05.fedoraproject.org.
