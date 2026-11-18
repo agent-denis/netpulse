@@ -82,8 +82,9 @@ Progress and the next steps are in `docs/PROGRESS.md`. Read it first when resumi
   time-exceeded replies. mtr's helper `mtr-packet` has `cap_net_raw`, so all modes work unprivileged.
 - Port check: some networks run transparent proxies that accept every TCP connection
   (seen on the dev machine: 192.0.2.1:443 "open"). The UI warns about this.
-- Fixtures with local network data are anonymised (MACs → 52:54:00:00:00:0x,
-  link-local → fe80::N).
+- Fixtures are anonymised: local data (MACs → 52:54:00:00:00:0x,
+  link-local → fe80::N) and traceroute/mtr routes (transit hops → 198.51.100.x, 203.0.113.x,
+  10.64.0.x; router names → coreN.transit.example.net). Keep doing this for new captures.
 - Native window (`window.py`): GTK 4 + WebKitGTK 6 with an *ephemeral* network session (no web
   cache/storage on disk). libadwaita, if present, follows the desktop dark style; otherwise the
   GNOME `color-scheme` GSetting is read. The page posts `{type:"theme"}` to the

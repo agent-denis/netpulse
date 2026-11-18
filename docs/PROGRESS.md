@@ -32,4 +32,4 @@
 - Homoglyph check catches mixed-script labels, not whole-script look-alikes (all-Cyrillic).
 - whois parsing is best effort; registries differ a lot (raw output always shown).
 - The dev machine has no IPv6 internet: IPv6 success paths are tested with ::1 only.
-- traceroute/mtr fixtures show this network's route (private hops + public ISP routers).
+- traceroute/mtr fixtures are anonymised: transit routers use documentation ranges (198.51.100.0/24, 203.0.113.0/24), ISP-internal hops 10.64.0.0/24, router names *.transit.example.net.
