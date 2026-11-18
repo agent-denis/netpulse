@@ -24,8 +24,15 @@ export function currentPref() {
   return root.getAttribute("data-theme-pref") || "system";
 }
 
+/** In the native GTK window, keep the window frame in the same theme. */
+function tellWindow(pref) {
+  const handler = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.netpulse;
+  if (handler) handler.postMessage({ type: "theme", value: pref });
+}
+
 export async function setPref(pref, { save = true } = {}) {
   apply(pref);
+  tellWindow(pref);
   try {
     localStorage.setItem("netpulse-theme", pref);
   } catch (e) {

@@ -220,3 +220,17 @@ def test_settings_roundtrip(app):
 def test_body_size_limit(app):
     status, _, _ = request(app, "POST", "/api/jobs", {"tool": "echo", "params": {"x": "a" * 70000}})
     assert status == 413
+
+
+def test_idle_watch_stops_only_after_a_client_went_away(app):
+    import time as _t
+
+    from netpulse.server import start_idle_watch
+
+    fired = []
+    start_idle_watch(app, 0.2, lambda: fired.append(1), interval=0.05)
+    _t.sleep(0.4)
+    assert fired == []  # no page has connected yet: keep waiting
+    request(app, "GET", "/api/info")  # a page connects…
+    _t.sleep(0.6)  # …and goes quiet
+    assert fired == [1]

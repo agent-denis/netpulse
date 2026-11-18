@@ -89,15 +89,15 @@ def main(argv: list[str] | None = None) -> int:
     lock = InstanceLock()
     if not lock.acquire():
         info = lock.read() or {}
-        reply = ask_running_instance(info)
+        reply = ask_running_instance(info, present=mode != "none")
         if reply is None:
             print("netpulse: another instance is running but not responding", file=sys.stderr)
             return 1
         launch = f"{info['url']}#token={info['token']}"
-        if reply.get("window"):
-            print("netpulse: raised the running NetPulse window")
-        elif mode == "none":
+        if mode == "none":
             print(launch)
+        elif reply.get("window"):
+            print("netpulse: raised the running NetPulse window")
         else:
             open_browser(launch)
             print(f"netpulse: already running at {info['url']}")

@@ -58,17 +58,21 @@ class InstanceLock:
             self._fh = None
 
 
-def ask_running_instance(info: dict[str, Any], timeout: float = 3.0) -> dict[str, Any] | None:
-    """Ask the running instance to raise its window. Returns its reply or None."""
+def ask_running_instance(
+    info: dict[str, Any], timeout: float = 3.0, *, present: bool = True
+) -> dict[str, Any] | None:
+    """Ask the running instance to raise its window (or, with present=False, only
+    check that it answers). Returns its reply or None."""
     url = str(info.get("url", ""))
     token = str(info.get("token", ""))
     if not url.startswith(("http://127.", "http://[::1]")):
         return None
+    headers = {"Content-Type": "application/json", security.TOKEN_HEADER: token}
     req = urllib.request.Request(  # noqa: S310 (checked: loopback http only)
-        url.rstrip("/") + "/api/present",
-        data=b"{}",
-        method="POST",
-        headers={"Content-Type": "application/json", security.TOKEN_HEADER: token},
+        url.rstrip("/") + ("/api/present" if present else "/api/ping"),
+        data=b"{}" if present else None,
+        method="POST" if present else "GET",
+        headers=headers,
     )
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 (loopback only)

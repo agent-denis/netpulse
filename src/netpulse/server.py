@@ -406,12 +406,14 @@ class Handler(BaseHTTPRequestHandler):
             app.manager.unsubscribe(job)
 
 
-def start_idle_watch(app: App, idle_timeout: float, on_idle: Callable[[], None]) -> None:
+def start_idle_watch(
+    app: App, idle_timeout: float, on_idle: Callable[[], None], interval: float = 5.0
+) -> None:
     """Stop the server when the page has been gone for a while (browser mode)."""
 
     def loop() -> None:
         while not app.manager.closing:
-            time.sleep(5)
+            time.sleep(interval)
             idle = time.monotonic() - app.last_activity
             if app.seen_client and idle > idle_timeout and not app.manager.running():
                 on_idle()
