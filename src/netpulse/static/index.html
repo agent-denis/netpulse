@@ -58,6 +58,11 @@
         <input type="search" id="history-search" placeholder="Search by tool, host or status…" autocomplete="off">
         <button type="button" class="danger" id="history-clear">Clear history</button>
       </div>
+      <div class="notice warn confirm-box" id="history-confirm" role="alertdialog" aria-labelledby="history-confirm-text" hidden>
+        <p id="history-confirm-text">Delete all saved runs? This cannot be undone.</p>
+        <button type="button" class="danger-solid" id="history-confirm-yes">Delete all</button>
+        <button type="button" id="history-confirm-no">Cancel</button>
+      </div>
       <p class="muted" id="history-status" aria-live="polite"></p>
       <div class="table-wrap">
         <table class="data" id="history-table">

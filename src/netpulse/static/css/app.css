@@ -16,6 +16,7 @@
   --sidebar-bg: #ebebed;
   --sidebar-hover: #e0e0e3;
   --sidebar-active: #d6dbe3;
+  --sidebar-heading: #1a5fb4;
   --border: #dcdcde;
   --border-strong: #85858c;
   --text: #1d1d20;
@@ -56,6 +57,7 @@
   --sidebar-bg: #242428;
   --sidebar-hover: #303035;
   --sidebar-active: #36404f;
+  --sidebar-heading: #8fbaf2;
   --border: #3e3e44;
   --border-strong: #8d8d96;
   --text: #f1f1f3;
@@ -375,13 +377,20 @@ button.icon-only {
   overflow-y: auto;
 }
 
+/* Group headings (CONNECTIVITY, DNS, …) stand apart from the tools under them:
+   own colour, a divider above each group and a bit more space. */
 .sidebar h2 {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  padding: 12px 10px 4px;
+  letter-spacing: 0.06em;
+  color: var(--sidebar-heading);
+  padding: 14px 10px 6px;
+}
+
+.sidebar section + section {
+  margin-top: 6px;
+  border-top: 1px solid var(--border);
 }
 
 .sidebar ul {
@@ -854,18 +863,22 @@ details.menu .menu-items button {
 }
 
 /* ------------------------------------------------------------------ summary widgets */
+/* Tiles grow to fit their value (an IP address never breaks mid-number);
+   text only wraps if one value is wider than the whole card. */
 .stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 14px;
 }
 
 .stat {
+  flex: 1 1 auto;
+  min-width: 130px;
+  max-width: 100%;
   background: var(--surface-2);
   border-radius: var(--radius-sm);
   padding: 8px 12px;
-  min-width: 0;
 }
 
 .stat .stat-label {
@@ -985,7 +998,9 @@ table.data td.mono,
 table.data td .mono {
   font-family: var(--mono);
   font-size: 12.5px;
-  overflow-wrap: anywhere;
+  /* Break only at spaces: an IP address or host name is never split. A very long
+     single token (e.g. a DNSKEY) makes the table scroll sideways instead. */
+  overflow-wrap: break-word;
 }
 
 table.data tr.diff td {
@@ -1317,4 +1332,25 @@ progress {
   width: 100%;
   height: 10px;
   accent-color: var(--accent);
+}
+
+/* Inline confirmation (Clear history) */
+.confirm-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.confirm-box p {
+  margin: 0;
+  flex: 1 1 260px;
+}
+
+button.danger-solid {
+  background: var(--err);
+  border-color: var(--err);
+  color: var(--surface);
+  font-weight: 600;
 }

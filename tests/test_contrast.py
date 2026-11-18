@@ -37,8 +37,10 @@ PAIRS: list[tuple[str, str, float]] = [
     *[("text", b, TEXT) for b in [*BACKGROUNDS, "sidebar-bg", "sidebar-hover", "sidebar-active"]],
     *[("text-muted", b, TEXT) for b in [*BACKGROUNDS, "sidebar-bg", "sidebar-active"]],
     *[("link", b, TEXT) for b in BACKGROUNDS],
+    *[("sidebar-heading", b, TEXT) for b in ("sidebar-bg", "sidebar-hover")],
     ("accent-text", "accent", TEXT),
     ("accent-text", "accent-hover", TEXT),
+    ("surface", "err", TEXT),  # "Delete all" button
     *[(s, b, TEXT) for s in ("ok", "warn", "err", "info") for b in ("surface", "surface-2")],
     ("ok", "ok-bg", TEXT),
     ("warn", "warn-bg", TEXT),

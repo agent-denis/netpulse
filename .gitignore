@@ -8,3 +8,6 @@ __pycache__/
 /.venv/
 *.rpm
 *.tar.gz
+
+# your own screenshots for feedback (not part of the project)
+/ScreenShots/

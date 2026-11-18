@@ -45,7 +45,7 @@ export function initHistory({ toolTitle, openEntry, rerunEntry, announce, settin
           h("td", { class: "num" }, formatTime(e.started_at)),
           h("td", {}, toolTitle(e.tool)),
           h("td", { class: "mono" }, (e.title || "").replace(/^[^:]+:\s*/, "")),
-          h("td", {}, h("span", { class: ["status-text", level] }, statusIcon(e.status === "running" ? "queued" : e.status), st.label)),
+          h("td", {}, h("span", { class: ["status-text", level] }, statusIcon(level === "warn" ? "warning" : e.status), level === "warn" ? "Done, with warnings" : st.label)),
           h("td", { class: "num" }, formatDuration(e.elapsed)),
           h(
             "td",
@@ -80,16 +80,62 @@ export function initHistory({ toolTitle, openEntry, rerunEntry, announce, settin
     clearTimeout(timer);
     timer = setTimeout(load, 200);
   });
-  document.getElementById("history-clear").addEventListener("click", async () => {
-    if (!window.confirm("Delete all saved runs? This cannot be undone.")) return;
+  // Clearing asks for confirmation inside the dialog (no window.confirm(): embedded
+  // web views do not always show native pop-ups).
+  const clearBtn = document.getElementById("history-clear");
+  const confirmBox = document.getElementById("history-confirm");
+  const confirmText = document.getElementById("history-confirm-text");
+  const yes = document.getElementById("history-confirm-yes");
+  const no = document.getElementById("history-confirm-no");
+  let total = 0;
+
+  function closeConfirm(focusTarget = clearBtn) {
+    confirmBox.hidden = true;
+    focusTarget.focus();
+  }
+
+  clearBtn.addEventListener("click", async () => {
     try {
-      await api("DELETE", "/api/history");
-      announce("History cleared");
-      load();
+      total = (await api("GET", "/api/history?limit=1000")).entries.length;
     } catch (e) {
-      statusEl.textContent = `Could not clear history: ${e.message}`;
+      total = 0;
+    }
+    if (!total) {
+      statusEl.textContent = "History is already empty.";
+      return;
+    }
+    confirmText.textContent =
+      total === 1
+        ? "Delete the saved run? This cannot be undone."
+        : `Delete all ${total}${total >= 1000 ? "+" : ""} saved runs? This cannot be undone.`;
+    confirmBox.hidden = false;
+    no.focus();
+  });
+  no.addEventListener("click", () => closeConfirm());
+  confirmBox.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") {
+      ev.preventDefault();
+      ev.stopPropagation();
+      closeConfirm();
     }
   });
+  yes.addEventListener("click", async () => {
+    yes.disabled = true;
+    try {
+      await api("DELETE", "/api/history");
+      search.value = "";
+      await load();
+      statusEl.textContent = "History cleared.";
+      announce("History cleared");
+      closeConfirm(search);
+    } catch (e) {
+      statusEl.textContent = `Could not clear history: ${e.message}`;
+    } finally {
+      yes.disabled = false;
+    }
+  });
+  dialog.addEventListener("close", () => (confirmBox.hidden = true));
+
   prefs.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     try {

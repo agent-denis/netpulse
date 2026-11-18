@@ -56,8 +56,11 @@ export default {
           { key: "rtts", label: "RTTs", num: true, render: (r) => (r.probes.map((p) => (p.rtt === null || p.rtt === undefined ? "*" : formatMs(p.rtt, 1))).join(", ")) },
           { key: "avg", label: "Avg", num: true, render: (r) => formatMs(r.avg, 1) },
           { key: "loss", label: "Loss", render: lossCell },
-          { key: "annotations", label: "Notes", render: (r) => (r.annotations || []).join(" ") },
-        ],
+          // only when some hop has notes (e.g. !H, asymm), so the table fits narrow windows
+          (s.hops || []).some((r) => (r.annotations || []).length)
+            ? { key: "annotations", label: "Notes", render: (r) => (r.annotations || []).join(" ") }
+            : null,
+        ].filter(Boolean),
         s.hops || [],
         { caption: "Hops", empty: "Waiting for the first hop…" },
       ),

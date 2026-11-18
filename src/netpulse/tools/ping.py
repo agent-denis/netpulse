@@ -138,7 +138,8 @@ def parse(output: str) -> Summary:
     else:
         summary["status"] = "ok"
         if summary["complete"]:
-            summary["message"] = f"all {summary['received']} replies received"
+            n = summary["received"]
+            summary["message"] = "1 reply received" if n == 1 else f"all {n} replies received"
     return summary
 
 
