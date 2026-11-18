@@ -75,14 +75,7 @@ NetPulse then appears in GNOME Activities. To remove it: `sudo dnf remove netpul
 Your settings and history (`~/.config/netpulse`, `~/.local/share/netpulse`) are kept; delete
 those folders yourself if you want them gone.
 
-### From COPR
 
-Once a COPR project exists (see [Building in COPR](#building-in-copr)):
-
-```sh
-sudo dnf copr enable agent-denis/netpulse
-sudo dnf install netpulse
-```
 
 ### From source
 
