@@ -9,45 +9,45 @@
 /* ------------------------------------------------------------------ tokens */
 :root,
 :root[data-theme="light"] {
-  /* "Semi-light" earth palette: sand, clay, terracotta, sage, ochre. Muted, not bright. */
+  /* Warm, cheerful pastels: cream, apricot, coral, teal, mint, sunny yellow, sky. */
   color-scheme: light;
-  --bg: #e9e1d3;
-  --surface: #f4eee3;
-  --surface-2: #e9e0cf;
-  --sidebar-bg: #ddd2bd;
-  --sidebar-hover: #d3c6ae;
-  --sidebar-active: #cfc2a8;
-  --sidebar-heading: #793c23;
-  --border: #d2c4ab;
-  --border-strong: #7c6e57;
-  --text: #2e2820;
-  --text-muted: #514839;
-  --accent: #8b4a2f;
-  --accent-hover: #733b24;
-  --accent-text: #fbf6ee;
-  --link: #84442a;
-  --focus: #84442a;
-  --ok: #3f5c22;
-  --ok-bg: #dde3c6;
-  --warn: #714800;
-  --warn-bg: #eedcb4;
-  --err: #962e1d;
-  --err-bg: #efd2c6;
-  --info: #2c5861;
-  --info-bg: #d2dfdc;
-  --code-bg: #ede5d6;
-  --code-text: #2e2820;
-  --chart-line: #2c5861;
-  --chart-loss: #962e1d;
-  --chart-grid: #d8cbb5;
-  --chart-axis: #514839;
-  --bar-1: #2c5861;
-  --bar-2: #8b4a2f;
-  --bar-3: #556b26;
-  --bar-4: #8a5f12;
-  --bar-5: #6b4a66;
-  --shadow: rgba(70, 50, 25, 0.1);
-  --backdrop: rgba(45, 32, 20, 0.4);
+  --bg: #faf3e6;
+  --surface: #fffaf2;
+  --surface-2: #f8eedd;
+  --sidebar-bg: #f7e4c9;
+  --sidebar-hover: #f2d9b6;
+  --sidebar-active: #f0d0a4;
+  --sidebar-heading: #1c6a64;
+  --border: #ebdabf;
+  --border-strong: #93805f;
+  --text: #2d2a26;
+  --text-muted: #574f43;
+  --accent: #bb4620;
+  --accent-hover: #9f3a19;
+  --accent-text: #ffffff;
+  --link: #a63f1b;
+  --focus: #1c6a64;
+  --ok: #2e6a29;
+  --ok-bg: #dcf0d0;
+  --warn: #775000;
+  --warn-bg: #fdecb5;
+  --err: #ad2c25;
+  --err-bg: #fbdcd6;
+  --info: #1d5e88;
+  --info-bg: #d9ecf8;
+  --code-bg: #fbf3e5;
+  --code-text: #2d2a26;
+  --chart-line: #1c7a72;
+  --chart-loss: #ad2c25;
+  --chart-grid: #ecdec7;
+  --chart-axis: #574f43;
+  --bar-1: #1c7a72;
+  --bar-2: #c7552a;
+  --bar-3: #4f8a2a;
+  --bar-4: #a8750a;
+  --bar-5: #7a52a0;
+  --shadow: rgba(120, 80, 30, 0.1);
+  --backdrop: rgba(60, 40, 20, 0.35);
 }
 
 :root[data-theme="dark"] {

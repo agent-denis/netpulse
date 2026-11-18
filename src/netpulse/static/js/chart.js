@@ -5,13 +5,6 @@
  */
 import { h, s } from "./dom.js";
 
-function niceMax(v) {
-  if (v <= 0) return 1;
-  const exp = Math.pow(10, Math.floor(Math.log10(v)));
-  for (const m of [1, 2, 2.5, 5, 10]) if (m * exp >= v) return m * exp;
-  return 10 * exp;
-}
-
 /**
  * RTT line chart. points: [{seq, rtt|null}] (null = lost).
  * Returns a <figure> with an accessible description.
@@ -23,7 +16,11 @@ export function rttChart(points, { label = "Round-trip time per packet", unit = 
   const iw = W - pad.l - pad.r;
   const ih = H - pad.t - pad.b;
   const values = points.filter((p) => p.rtt !== null && p.rtt !== undefined).map((p) => p.rtt);
-  const max = niceMax(values.length ? Math.max(...values) * 1.1 : 1);
+  // Round axis steps (1, 2 or 5 × 10^n) so labels read 10, 20, 30… not 12.5, 25, 37.5.
+  const top = values.length ? Math.max(...values) * 1.1 : 1;
+  const mag = Math.pow(10, Math.floor(Math.log10(top / 4)));
+  const step = [1, 2, 5, 10].map((m) => m * mag).find((st) => top / st <= 5) || 10 * mag;
+  const max = Math.ceil(top / step) * step;
   const n = Math.max(points.length, 2);
   const seqs = points.map((p) => p.seq);
   const minSeq = seqs.length ? Math.min(...seqs) : 1;
@@ -35,9 +32,8 @@ export function rttChart(points, { label = "Round-trip time per packet", unit = 
   const svg = s("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": label, preserveAspectRatio: "xMidYMid meet" });
   const grid = s("g", { class: "grid" });
   const axis = s("g", { class: "axis" });
-  const step = max / 4;
-  const digits = step >= 10 ? 0 : step >= 1 ? 1 : Math.min(4, Math.ceil(-Math.log10(step)) + 1);
-  for (let i = 0; i <= 4; i++) {
+  const digits = step >= 1 ? 0 : Math.min(4, Math.ceil(-Math.log10(step)));
+  for (let i = 0; i <= Math.round(max / step); i++) {
     const v = step * i;
     const yy = y(v);
     grid.appendChild(s("line", { x1: pad.l, x2: W - pad.r, y1: yy, y2: yy }));

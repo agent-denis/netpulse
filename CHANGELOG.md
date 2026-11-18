@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Live output over Server-Sent Events, cancelling, several jobs at once, Copy and export
   as TXT, JSON and Markdown.
 - Searchable run history with re-run, clear and a size limit.
-- Light (soft earth tones), Dark and System themes with WCAG 2.1 AA contrast.
+- Light (warm pastels), Dark and System themes with WCAG 2.1 AA contrast.
 - RPM spec, desktop file, AppStream metainfo, icons, man page and Packit configuration.
 
 [Unreleased]: https://github.com/agent-denis/netpulse/compare/v1.0.0...HEAD
